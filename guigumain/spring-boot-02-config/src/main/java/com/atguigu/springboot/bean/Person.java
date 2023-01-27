@@ -11,7 +11,13 @@ import java.util.Map;
 /*
 * 告诉springboot将本类中的所有属性和配置文件中相关的配置进行绑定
 * */
-@PropertySource(value = {"classpath:person.properties"})
+//@PropertySource(value = {"classpath:person.properties"})
+
+
+
+
+
+
 @Component
 @ConfigurationProperties(prefix = "person")
 public class Person {
