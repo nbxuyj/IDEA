@@ -13,7 +13,8 @@ import java.util.Map;
 public class HelloController {
     @GetMapping("/hello")
     public  String Hello(){
-        return "Hello xuyj";
+
+        return "hello";
     }
 
     //查出一些数据，在
