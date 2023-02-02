@@ -11,6 +11,14 @@ import java.util.Map;
 
 @Controller
 public class HelloController {
+
+    //第一种方法。
+//    @RequestMapping({"/" , "/index.html"})
+//    public String index(){
+//        return  "index";
+//    }
+
+
     @GetMapping("/hello")
     public  String Hello(){
 

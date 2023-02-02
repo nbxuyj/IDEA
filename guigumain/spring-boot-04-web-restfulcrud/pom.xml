@@ -47,6 +47,12 @@
             <version>3.6.3</version>
         </dependency>
 
+        <!--引入bootstap-->
+        <dependency>
+            <groupId>org.webjars.npm</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>4.5.1</version>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
