@@ -14,8 +14,11 @@ public class MyLocaleResolver implements LocaleResolver {
 
     @Override
     public Locale resolveLocale(HttpServletRequest request) {
+
+
         //解析区域信息。
         String l= request.getParameter("l");
+        System.out.println("l值值："+l);
         Locale locale= Locale.getDefault();
         if (!StringUtils.isEmpty(l)){
             String[] s = l.split("_");
