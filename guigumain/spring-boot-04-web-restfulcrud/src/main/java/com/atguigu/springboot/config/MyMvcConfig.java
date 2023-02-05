@@ -1,6 +1,8 @@
 package com.atguigu.springboot.config;
 
 
+
+
 import com.atguigu.springboot.component.MyLocaleResolver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

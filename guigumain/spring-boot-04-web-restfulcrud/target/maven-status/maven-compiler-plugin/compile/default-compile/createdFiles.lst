@@ -1,5 +1,7 @@
+com\atguigu\springboot\config\MyMvcConfig$1.class
 com\atguigu\springboot\SpringBoot04WebRestfulcrudApplication.class
 com\atguigu\springmvc\crud\entities\Department.class
+com\atguigu\springboot\config\MyMvcConfig.class
 com\atguigu\springmvc\crud\entities\Employee.class
 com\atguigu\springmvc\crud\dao\DepartmentDao.class
 com\atguigu\springboot\controller\HelloController.class

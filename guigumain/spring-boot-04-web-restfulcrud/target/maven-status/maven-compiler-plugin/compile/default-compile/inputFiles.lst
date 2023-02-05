@@ -1,6 +1,7 @@
 D:\Code\IDEA\guigumain\spring-boot-04-web-restfulcrud\src\main\java\com\atguigu\springboot\dao\EmployeeDao.java
 D:\Code\IDEA\guigumain\spring-boot-04-web-restfulcrud\src\main\java\com\atguigu\springboot\controller\HelloController.java
 D:\Code\IDEA\guigumain\spring-boot-04-web-restfulcrud\src\main\java\com\atguigu\springboot\entities\Department.java
+D:\Code\IDEA\guigumain\spring-boot-04-web-restfulcrud\src\main\java\com\atguigu\springboot\component\MyLocaleResolver.java
 D:\Code\IDEA\guigumain\spring-boot-04-web-restfulcrud\src\main\java\com\atguigu\springboot\SpringBoot04WebRestfulcrudApplication.java
 D:\Code\IDEA\guigumain\spring-boot-04-web-restfulcrud\src\main\java\com\atguigu\springboot\dao\DepartmentDao.java
 D:\Code\IDEA\guigumain\spring-boot-04-web-restfulcrud\src\main\java\com\atguigu\springboot\entities\Employee.java
