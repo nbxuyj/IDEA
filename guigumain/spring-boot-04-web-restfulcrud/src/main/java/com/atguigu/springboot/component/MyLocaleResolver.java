@@ -17,12 +17,11 @@ public class MyLocaleResolver implements LocaleResolver {
 
 
         //解析区域信息。
-        String l= request.getParameter("l");
-        System.out.println("l值值："+l);
-        Locale locale= Locale.getDefault();
-        if (!StringUtils.isEmpty(l)){
-            String[] s = l.split("_");
-            locale=new Locale(s[0],s[1]);
+        String l = request.getParameter("l");
+        Locale locale = Locale.getDefault();
+        if(!StringUtils.isEmpty(l)){
+            String[] split = l.split("_");
+            locale = new Locale(split[0],split[1]);
         }
         return locale;
     }

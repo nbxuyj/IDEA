@@ -3,13 +3,13 @@ package com.atguigu.springboot.config;
 
 
 
-import com.atguigu.springboot.component.MyLocaleResolver;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-//全面接管
+
 //@EnableWebMvc
 @Configuration
 public class MyMvcConfig extends WebMvcConfigurerAdapter {
@@ -34,7 +34,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
     }
 
     @Bean
-    public MyLocaleResolver localResolver() {
+    public LocaleResolver localResolver() {
         return new MyLocaleResolver();
 
     }
