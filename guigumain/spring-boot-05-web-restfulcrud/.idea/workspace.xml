@@ -1,13 +1,164 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f9989e9-88e2-473c-88cc-661a55fc274a" name="Default Changelist" comment="错误消息显示。">
+    <list default="true" id="7f9989e9-88e2-473c-88cc-661a55fc274a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_13_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_13_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_13_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_13_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_13_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_13_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_7_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__com_mysql_mysql_connector_j_8_0_32.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__com_zaxxer_HikariCP_4_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_1_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_1_3_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_12_22.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_12_22.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__net_minidev_accessors_smart_2_4_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__net_minidev_json_smart_2_4_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_17_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_17_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_71.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_71.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_71.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_assertj_assertj_core_3_22_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_hamcrest_hamcrest_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_8_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_8_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_mockito_mockito_core_4_5_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_4_5_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_objenesis_objenesis_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_ow2_asm_asm_9_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_36.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_36.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_7_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_7_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_7_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_7_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_7_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_7_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_7_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_7_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_7_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_7_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_7_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_springframework_spring_aop_5_3_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_springframework_spring_beans_5_3_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_springframework_spring_context_5_3_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_springframework_spring_core_5_3_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_springframework_spring_expression_5_3_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_springframework_spring_jcl_5_3_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_springframework_spring_jdbc_5_3_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_springframework_spring_test_5_3_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_springframework_spring_tx_5_3_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_springframework_spring_web_5_3_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_springframework_spring_webmvc_5_3_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_9_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/libraries/Maven__org_yaml_snakeyaml_1_30.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot-06-data-jdbc/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/atguigu/springboot/config/MyMvcConfig$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/atguigu/springboot/config/MyMvcConfig$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/atguigu/springboot/config/MyMvcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/atguigu/springboot/config/MyMvcConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/dashboard.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_11.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_11.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_13_4.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_13_4.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_13_4_2.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_13_4.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_13_4.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_13_4.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_7_0.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_1_2_2.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_1_3_5.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_3.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_12_22.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_12_22.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__net_minidev_accessors_smart_2_4_8.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__net_minidev_json_smart_2_4_8.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_17_2.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_17_2.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_71.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_71.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_71.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_assertj_assertj_core_3_22_0.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_hamcrest_hamcrest_2_2.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_8_2.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_2.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_2.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_8_2.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_2.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_2.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_mockito_mockito_core_4_5_1.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_4_5_1.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_objenesis_objenesis_3_2.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_ow2_asm_asm_9_1.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_1.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_36.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_36.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_7_8.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_7_8.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_7_8.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_7_8.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_7_8.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_7_8.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_7_8.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_7_8.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_7_8.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_7_8.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_springframework_spring_aop_5_3_25.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_springframework_spring_beans_5_3_25.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_springframework_spring_context_5_3_25.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_springframework_spring_core_5_3_25.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_springframework_spring_expression_5_3_25.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_springframework_spring_jcl_5_3_25.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_springframework_spring_test_5_3_25.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_springframework_spring_web_5_3_25.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_springframework_spring_webmvc_5_3_25.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_9_1.xml" />
+    <ignored path="../../xuyj/.idea/libraries/Maven__org_yaml_snakeyaml_1_30.xml" />
+    <ignored path="../../xuyj/.idea/.name" />
+    <ignored path="../../xuyj/.idea/compiler.xml" />
+    <ignored path="../../xuyj/.idea/encodings.xml" />
+    <ignored path="../../xuyj/.idea/misc.xml" />
+    <ignored path="../../xuyj/.idea/modules.xml" />
+    <ignored path="../../xuyj/.idea/vcs.xml" />
+    <ignored path="../../xuyj/.idea/workspace.xml" />
+    <ignored path="../../xuyj/model1/target/classes/com/xuyj/controller/HelloController.class" />
+    <ignored path="../../xuyj/model1/target/classes/com/xuyj/Mode1Application.class" />
+    <ignored path="../../xuyj/model1/target/classes/application.properties" />
+    <ignored path="../../xuyj/model1/target/maven-archiver/pom.properties" />
+    <ignored path="../../xuyj/model1/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+    <ignored path="../../xuyj/model1/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+    <ignored path="../../xuyj/model1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
+    <ignored path="../../xuyj/model1/target/model1-0.0.1-SNAPSHOT.jar" />
+    <ignored path="../../xuyj/model1/target/model1-0.0.1-SNAPSHOT.jar.original" />
+    <ignored path="../../xuyj/model2/target/classes/com/xuyj/model2/Model2Application.class" />
+    <ignored path="../../xuyj/model2/target/classes/application.properties" />
+    <ignored path="../../xuyj/model2/target/maven-archiver/pom.properties" />
+    <ignored path="../../xuyj/model2/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+    <ignored path="../../xuyj/model2/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+    <ignored path="../../xuyj/model2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
+    <ignored path="../../xuyj/model2/target/model2-0.0.1-SNAPSHOT.jar" />
+    <ignored path="../../xuyj/model2/target/model2-0.0.1-SNAPSHOT.jar.original" />
+    <ignored path="../../xuyj/pom.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +173,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/atguigu/springboot/config/MyMvcConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="36" column="34" lean-forward="true" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+            <state relative-caret-position="672">
+              <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -34,8 +185,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="37" column="67" lean-forward="true" selection-start-line="37" selection-start-column="67" selection-end-line="37" selection-end-column="67" />
+            <state relative-caret-position="264">
+              <caret line="151" column="36" selection-start-line="151" selection-start-column="36" selection-end-line="151" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -43,7 +194,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/atguigu/springboot/component/LoginHandlerInterceptor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
+            <state relative-caret-position="240">
               <caret line="14" column="66" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -55,8 +206,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="264">
+              <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="98" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -67,7 +218,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/atguigu/springboot/component/MyLocaleResolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
+            <state relative-caret-position="264">
               <caret line="16" column="18" selection-start-line="18" selection-end-line="24" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -200,8 +351,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="773" />
-    <option name="width" value="974" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="858" />
     <option name="height" value="1039" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -210,84 +362,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="CatdeaLogs" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="spring-boot-05-web-restfulcrud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-boot-05-web-restfulcrud" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-boot-05-web-restfulcrud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-boot-05-web-restfulcrud" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-boot-05-web-restfulcrud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-boot-05-web-restfulcrud" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-boot-05-web-restfulcrud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-boot-05-web-restfulcrud" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-boot-05-web-restfulcrud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-boot-05-web-restfulcrud" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springboot" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-boot-05-web-restfulcrud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-boot-05-web-restfulcrud" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springboot" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-boot-05-web-restfulcrud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-boot-05-web-restfulcrud" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springboot" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-boot-05-web-restfulcrud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-boot-05-web-restfulcrud" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-boot-05-web-restfulcrud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-boot-05-web-restfulcrud" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spring-boot-05-web-restfulcrud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spring-boot-05-web-restfulcrud" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
+      <pane id="CatdeaLogs" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -361,7 +439,8 @@
       <workItem from="1675690551684" duration="228000" />
       <workItem from="1675860590127" duration="5055000" />
       <workItem from="1676066777751" duration="1756000" />
-      <workItem from="1676070168347" duration="3106000" />
+      <workItem from="1676070168347" duration="4106000" />
+      <workItem from="1676810571439" duration="1400000" />
     </task>
     <task id="LOCAL-00001" summary="增加spring-boot-05-web-restfulcrud项目。">
       <created>1675590016254</created>
@@ -538,17 +617,30 @@
       <option name="project" value="LOCAL" />
       <updated>1676072614447</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="[[${session.loginUser}]] 显示用户名。">
+      <created>1676073424215</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1676073424215</updated>
+    </task>
+    <task id="LOCAL-00027" summary="修改静态资源引用。">
+      <created>1676073734046</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1676073734046</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24797000" />
+    <option name="totallyTimeSpent" value="27197000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49943882" visible="true" weight="0.22263949" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49943882" visible="true" weight="0.22585838" />
       <window_info id="Structure" order="1" sideWeight="0.5005612" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -558,7 +650,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32772166" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32772166" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.36924803" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -587,7 +679,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="增加spring-boot-05-web-restfulcrud项目。" />
     <MESSAGE value="添加静态资源文件。" />
     <MESSAGE value="切换8081端口&#10;增加favicon.ico文件。" />
     <MESSAGE value="可以指定静态文件夹文件夹。" />
@@ -611,7 +702,9 @@
     <MESSAGE value="修改login.html" />
     <MESSAGE value="错误消息显示。" />
     <MESSAGE value="添加thymeleaf.org 头的问题。" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加thymeleaf.org 头的问题。" />
+    <MESSAGE value="[[${session.loginUser}]] 显示用户名。" />
+    <MESSAGE value="修改静态资源引用。" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改静态资源引用。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -712,28 +805,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login2.html" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/i18n/login_en_US.properties">
+      <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
-      <provider editor-type-id="ResourceBundle" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/i18n/login_zh_CN.properties">
+      <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
-      <provider editor-type-id="ResourceBundle" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/i18n/login.properties">
+      <provider selected="true" editor-type-id="ResourceBundle" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="ResourceBundle" />
     </entry>
     <entry file="jar://D:/apache-maven/apache-maven-3.3.9/repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.71/tomcat-embed-core-9.0.71.jar!/org/apache/catalina/connector/RequestFacade.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -783,6 +876,53 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/hello.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/atguigu/springboot/config/MyMvcConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/atguigu/springboot/component/LoginHandlerInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="14" column="66" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="98" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/atguigu/springboot/component/MyLocaleResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="16" column="18" selection-start-line="18" selection-end-line="24" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/atguigu/springboot/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -814,57 +954,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/atguigu/springboot/config/MyMvcConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="36" column="34" lean-forward="true" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/atguigu/springboot/component/MyLocaleResolver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="16" column="18" selection-start-line="18" selection-end-line="24" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/atguigu/springboot/component/LoginHandlerInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="14" column="66" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="37" column="67" lean-forward="true" selection-start-line="37" selection-start-column="67" selection-end-line="37" selection-end-column="67" />
+        <state relative-caret-position="264">
+          <caret line="151" column="36" selection-start-line="151" selection-start-column="36" selection-end-line="151" selection-end-column="36" />
         </state>
       </provider>
     </entry>
