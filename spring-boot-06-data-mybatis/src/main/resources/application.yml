@@ -4,8 +4,8 @@ spring:
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.159.154:3306/mybatis?serverTimezone=UTC
-    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://192.168.159.145:3306/mybatis
+
     #   数据源其他配置
     initialSize: 5
     minIdle: 5
@@ -23,3 +23,5 @@ spring:
     maxPoolPreparedStatementPerConnectionSize: 20
     useGlobalDataSourceStat: true
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+server:
+  port: 8085
