@@ -16,7 +16,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-tx:6.0.4" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-tx:5.3.9" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.3.25" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:5.3.25" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.3.25" level="project" />
