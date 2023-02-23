@@ -10,13 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DeptController {
     @Autowired
-    DepartmentMapper  departmentMapper;
+    DepartmentMapper departmentMapper;
+
     @GetMapping("/dept/{id}")
-    public Department getDepartment(@PathVariable("id") Integer id){
-        return  departmentMapper.getDeptById(id);
+    public Department getDepartment(@PathVariable("id") Integer id) {
+        return departmentMapper.getDeptById(id);
     }
-@GetMapping("/dept")
-    public  Department inertDept(Department department){
+
+    @GetMapping("/dept")
+    public Department insertDept(Department department) {
         departmentMapper.insertDept(department);
         return department;
     }

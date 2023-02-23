@@ -8,3 +8,11 @@ sql:
   init:
     mode: always
 在resources目录下创建脚本schema-all.sql
+
+问题1： 执行插入报错。
+格式写错。
+http://localhost:8085/dept?departmentName=ddd
+
+
+
+
