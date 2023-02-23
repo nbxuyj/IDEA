@@ -1,0 +1,17 @@
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.159.145:3306/mybatis?serverTimezone=UTC
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  #\u76EE\u7684\u662F\u4E3A\u4E86\u7701\u7565resultType\u91CC\u7684\u4EE3\u7801\u91CF
+  type-aliases-package: com.xuyj.springboot.entity
+
+  configuration:
+    # log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # \u5F00\u542F\u9A7C\u5CF0\u547D\u540D
+    map-underscore-to-camel-case: true
