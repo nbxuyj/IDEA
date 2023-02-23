@@ -25,6 +25,6 @@ spring:
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
   sql:
     init:
-      mode: always
+      mode: never #never #always
 server:
   port: 8085
