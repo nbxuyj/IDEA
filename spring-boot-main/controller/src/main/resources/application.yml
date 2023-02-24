@@ -17,6 +17,9 @@ spring:
     password: 123456
     url: jdbc:mysql://192.168.159.145:3306/mybatis?characterEncoding=utf-8&useSSL=false
 
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 
 #测试时tomcat的端口，发布时记得注释或删除
 server:

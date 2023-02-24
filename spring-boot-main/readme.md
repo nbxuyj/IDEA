@@ -15,6 +15,8 @@ controller:webAPI模块。
 教程： https://www.jianshu.com/p/b5d44a4ba693
 启动： http://localhost:9091/user/find?name=laowang
 
-需求3：整合Swagger。【进度：进行中】
+需求3：整合Swagger。【进度：完工】
 教程：https://www.jianshu.com/p/06a400b79279
+启动：http://localhost:9091/swagger-ui.html
+问题参考：https://blog.csdn.net/mapboo/article/details/121568519
  
