@@ -19,4 +19,10 @@ controller:webAPI模块。
 教程：https://www.jianshu.com/p/06a400b79279
 启动：http://localhost:9091/swagger-ui.html
 问题参考：https://blog.csdn.net/mapboo/article/details/121568519
+
+2023年2月24日, PM 02:00:29
+需求4：前后端分离数据响应实体 【进度：完工】
+教程：https://www.jianshu.com/p/8ca1a7b80d33
+
+
  

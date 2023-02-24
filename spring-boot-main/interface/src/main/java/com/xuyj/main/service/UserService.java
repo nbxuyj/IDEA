@@ -1,5 +1,6 @@
 package com.xuyj.main.service;
 
+import com.xuyj.common.responseResult.ResponseResult;
 import com.xuyj.main.pojo.User;
 
 public interface UserService {
@@ -9,4 +10,5 @@ public interface UserService {
      * @return
      */
     User findUserByName(String name);
+    ResponseResult findUserByName2(String name);
 }

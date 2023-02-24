@@ -9,6 +9,7 @@
         <module>dao</module>
         <module>interface</module>
         <module>service</module>
+        <module>common</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

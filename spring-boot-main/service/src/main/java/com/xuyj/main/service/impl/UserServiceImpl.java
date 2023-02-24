@@ -1,5 +1,6 @@
 package com.xuyj.main.service.impl;
 
+import com.xuyj.common.responseResult.ResponseResult;
 import com.xuyj.main.dao.UserDao;
 import com.xuyj.main.pojo.User;
 import com.xuyj.main.service.UserService;
@@ -16,4 +17,16 @@ public class UserServiceImpl implements UserService {
     public User findUserByName(String name) {
         return userDao.findByName(name).orElse(null);
     }
+
+    @Override
+    public ResponseResult findUserByName2(String name) {
+        try {
+            User user= userDao.findByName(name).orElse(null);
+            return ResponseResult.success(user);
+        }catch (Exception e){
+            return ResponseResult.failure(e.getMessage());
+        }
+
+    }
+
 }

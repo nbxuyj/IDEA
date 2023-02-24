@@ -32,6 +32,7 @@
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-jpa:2.7.7" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-commons:2.7.7" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-orm:5.3.25" level="project" />
+    <orderEntry type="module" module-name="common" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-web:2.7.8" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-json:2.7.8" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.13.4.2" level="project" />
