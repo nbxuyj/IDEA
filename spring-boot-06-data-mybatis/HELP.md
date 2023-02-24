@@ -15,4 +15,17 @@ http://localhost:8085/dept?departmentName=ddd
 
 
 
+## 执行
+1.注解版本。
+    查询：http://localhost:8085/dept/1
+    插入：http://localhost:8085/dept?departmentName=zs
+2.配置版本：
+步骤：
+1). 创建Mapper接口。
+2).创建Mapper的XML文件。
+
+问题2：配置Mapper命名空间要指定到Mapper。
+ namespace="com.atguigu.springboot.mapper.EmployeeMapper
+
+
 
