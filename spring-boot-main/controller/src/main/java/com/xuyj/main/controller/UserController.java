@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/user")
-@Api(value = "Hello接口说明",tags = "guigu示例")
+@Api(value = "User控制器接口说明",tags = "Swagger测试")
 public class UserController {
 
     @Autowired
     private UserService userService;
-    @ApiOperation(value = "hello无参",notes = "这是第一个hello方法")
+    @ApiOperation(value = "根据姓名查询用户",notes = "这是备注说明")
     @RequestMapping(value = "/find",method = RequestMethod.GET)
     public User findByName(String name){
         return userService.findUserByName(name);
