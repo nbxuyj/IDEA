@@ -16,10 +16,12 @@ import java.util.List;
 public class MyBatisPlusTest {
     @Autowired
     UserMapper userMapper;
+
+
     @Test
     public void testSelectList(){
-        List<User> users = userMapper.selectList(null);
-        users.forEach(System.out::println);
+        List<User> list = userMapper.selectList(null);
+        list.forEach(System.out::println);
 
     }
 
