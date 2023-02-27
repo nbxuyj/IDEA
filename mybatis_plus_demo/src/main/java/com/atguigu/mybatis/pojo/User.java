@@ -7,8 +7,13 @@ import lombok.*;
 public class User {
     //@TableId("uid") ASSIGN_ID 雪花算法 ASSIGN_UUID GUID
 
+//    @TableId(value = "uid",type = IdType.AUTO)
+    //将属性对应的字段指定为主键。 type表示主键生成的策略。
+    //@TableId(value = "uid")
+
+
     @TableId(value = "uid",type = IdType.AUTO)
-    private Long uid;
+    private Long id;
     @TableField
     private String name;
     private  Integer age;
@@ -17,7 +22,7 @@ public class User {
     private Integer isDeleted;
 
     public User(Long id, String name, Integer age, String email) {
-        this.uid = id;
+        this.id = id;
         this.name = name;
         this.age = age;
         this.email = email;
