@@ -9,10 +9,11 @@ public class User {
 
 //    @TableId(value = "uid",type = IdType.AUTO)
     //将属性对应的字段指定为主键。 type表示主键生成的策略。
-    //@TableId(value = "uid")
 
 
-    @TableId(value = "uid",type = IdType.AUTO)
+
+    //@TableId(value = "uid",type = IdType.AUTO)
+    @TableId(value = "uid")
     private Long id;
     @TableField
     private String name;
