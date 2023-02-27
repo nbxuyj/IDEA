@@ -27,7 +27,7 @@ public class MyBatisPlusServiceTest {
         ArrayList<User> users = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
             User user = new User();
-            user.setUserName("ybc" + i);
+            user.setName("ybc" + i);
             user.setAge(20 + i);
             users.add(user);
         }

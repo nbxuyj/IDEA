@@ -15,8 +15,8 @@ public class User {
     //@TableId(value = "uid",type = IdType.AUTO)
     @TableId(value = "uid")
     private Long id;
-    @TableField
-    private String userName;
+    @TableField("user_name")
+    private String name;
     private  Integer age;
     private  String email;
     @TableLogic
@@ -24,7 +24,7 @@ public class User {
 
     public User(Long id, String name, Integer age, String email) {
         this.id = id;
-        this.userName = name;
+        this.name = name;
         this.age = age;
         this.email = email;
     }
