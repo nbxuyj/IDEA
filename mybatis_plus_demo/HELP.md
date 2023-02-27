@@ -25,4 +25,5 @@ https://www.gulixueyuan.com/course/516/task/22786/show
 2.设定自增，先将表字段设置为自增。测试还是雪花算法，将type调整为
 3.单独设置ID，优先级高。
 4.可设置统一的生成策略。
-    
+5.有逻辑删除时，查询也不需要指定is_deleted.
+   
