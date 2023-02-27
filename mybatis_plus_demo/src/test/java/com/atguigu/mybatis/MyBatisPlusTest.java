@@ -37,7 +37,7 @@ public class MyBatisPlusTest {
 
         int res = userMapper.insert(user);
         System.out.println("res:" + res);
-        System.out.println("id:" + user.getId());
+        System.out.println("id:" + user.getUid());
 
 
     }
