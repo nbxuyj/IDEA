@@ -109,7 +109,12 @@ public class MyBatisPlusTest {
         map.put("name", "admin");
         List<User> list = userMapper.selectByMap(map);
         list.forEach(System.out::println);
-
-
     }
+
+    @Test
+    public  void testmyQuery(){
+        Map<String, Object> map = userMapper.selectMapByID(1630124827874426884L);
+        System.out.println(map);
+    }
+
 }
