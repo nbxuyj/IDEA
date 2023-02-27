@@ -22,8 +22,17 @@ public class MyBatisPlusWrapperTest {
                 .isNotNull("email");
         List<User> list = userMapper.selectList(queryWrapper);
         list.forEach(System.out::println);
-
-
     }
 
+    //测试排序
+    @Test
+    public  void test2(){
+        //查询用户，按照年龄的降序排序，再按ID升序。
+        QueryWrapper<User> queryWrapper=new  QueryWrapper<>();
+        queryWrapper.orderByDesc("age")
+                .orderByAsc("uid");
+        List<User> list = userMapper.selectList(queryWrapper);
+        list.forEach(System.out::println);
+
+    }
 }
