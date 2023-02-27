@@ -31,7 +31,7 @@ public class MyBatisPlusTest {
     @Test
     public void testInsert() {
         User user = new User();
-        user.setName("张三");
+        user.setUserName("张三");
         user.setAge(23);
         user.setEmail("zs@dd.com");
 

@@ -16,7 +16,7 @@ public class User {
     @TableId(value = "uid")
     private Long id;
     @TableField
-    private String name;
+    private String userName;
     private  Integer age;
     private  String email;
     @TableLogic
@@ -24,7 +24,7 @@ public class User {
 
     public User(Long id, String name, Integer age, String email) {
         this.id = id;
-        this.name = name;
+        this.userName = name;
         this.age = age;
         this.email = email;
     }
