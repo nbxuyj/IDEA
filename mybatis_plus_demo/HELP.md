@@ -28,3 +28,8 @@ https://www.gulixueyuan.com/course/516/task/22786/show
 5.有逻辑删除时，查询也不需要指定is_deleted.
    
 https://www.gulixueyuan.com/course/516/task/22801/show
+
+悲观锁：
+1.当一个人操作，其它和等待。
+乐观锁：
+1.有行版本号，查询数据及对应的版本号。
