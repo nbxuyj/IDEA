@@ -5,6 +5,7 @@ import com.atguigu.mybatis.pojo.User;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import org.junit.jupiter.api.Test;
+import org.junit.platform.commons.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -121,5 +122,27 @@ public class MyBatisPlusWrapperTest {
         System.out.println("result:" + res);
     }
 
+    //===================组合条件===================
+    @Test
+    public void test09() {
+        //==>  Preparing: SELECT uid AS id,user_name AS name,age,email,is_deleted FROM t_user WHERE is_deleted=0 AND (age >= ? AND age <= ?)
+        String userName = "a";
+        Integer ageBegin = null;
+        Integer ageEnd = 30;
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        if (StringUtils.isNotBlank(userName)){
+            //不为空，不为null，不为空白符
+            queryWrapper.like("user_name",userName);
+        }
+        if (ageBegin!=null){
+            queryWrapper.ge("age",ageBegin);
+        }
+
+        if (ageEnd!=null){
+            queryWrapper.le("age",ageEnd);
+        }
+        List<User> list = userMapper.selectList(queryWrapper);
+        list.forEach(System.out::println);
+    }
 
 }
