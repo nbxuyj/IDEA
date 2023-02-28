@@ -27,3 +27,4 @@ https://www.gulixueyuan.com/course/516/task/22786/show
 4.可设置统一的生成策略。
 5.有逻辑删除时，查询也不需要指定is_deleted.
    
+https://www.gulixueyuan.com/course/516/task/22801/show
