@@ -50,18 +50,38 @@ public class MyBatisPlusWrapperTest {
     }
 
     @Test
-    public  void test4(){
+    public void test4() {
         //将用户名中包含有a并且（年龄大于20或邮箱为null）的用户信息修改
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         queryWrapper.like("user_name", "a")
-                .ge("age",20)
+                .ge("age", 20)
                 .or()
                 .isNull("email");
-        User user=new User();
+        User user = new User();
         user.setName("小明");
         user.setEmail("xm@qq.com");
         int res = userMapper.update(user, queryWrapper);
-        System.out.println("result:"+res);
+        System.out.println("result:" + res);
     }
+
+    @Test
+    public void test5() {
+        //条件的优先级
+        //将用户名中包含有a并且（年龄大于20或邮箱为null）的用户信息修改
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.like("user_name", "a")
+                .and(q -> q.ge("age", 20)
+                .or()
+                .isNull("email"));
+        User user = new User();
+        user.setName("小红");
+        user.setEmail("xm@qq.com");
+
+        int res = userMapper.update(user, queryWrapper);
+        System.out.println("result:" + res);
+
+
+    }
+
 
 }
