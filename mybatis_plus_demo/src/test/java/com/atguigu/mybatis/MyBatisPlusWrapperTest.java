@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
+import java.util.Map;
 
 @SpringBootTest
 public class MyBatisPlusWrapperTest {
@@ -68,6 +69,7 @@ public class MyBatisPlusWrapperTest {
     public void test5() {
         //条件的优先级
         //将用户名中包含有a并且（年龄大于20或邮箱为null）的用户信息修改
+        //UPDATE t_user SET user_name=?, email=? WHERE is_deleted=0 AND (user_name LIKE ? AND (age >= ? OR email IS NULL))
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         queryWrapper.like("user_name", "a")
                 .and(q -> q.ge("age", 20)
@@ -79,8 +81,17 @@ public class MyBatisPlusWrapperTest {
 
         int res = userMapper.update(user, queryWrapper);
         System.out.println("result:" + res);
+    }
 
-
+    @Test
+    public  void test6(){
+        //组装select语句。
+        //查询用户的用户名、年龄、邮箱信息
+        // SELECT user_name,age,email FROM t_user WHERE is_deleted=0
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.select("user_name","age","email");
+        List<Map<String, Object>> maps = userMapper.selectMaps(queryWrapper);
+        maps.forEach(System.out::println);
     }
 
 
