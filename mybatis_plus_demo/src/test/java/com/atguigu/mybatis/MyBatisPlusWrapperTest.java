@@ -144,5 +144,17 @@ public class MyBatisPlusWrapperTest {
         List<User> list = userMapper.selectList(queryWrapper);
         list.forEach(System.out::println);
     }
+    @Test
+    public  void test10(){
+        String userName = "a";
+        Integer ageBegin = null;
+        Integer ageEnd = 30;
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.like(StringUtils.isNotBlank(userName),"user_name",userName)
+                .ge(ageBegin!=null,"age",ageBegin)
+                .le(ageEnd!=null,"age",ageEnd);
+        List<User> list = userMapper.selectList(queryWrapper);
+        list.forEach(System.out::println);
+    }
 
 }
