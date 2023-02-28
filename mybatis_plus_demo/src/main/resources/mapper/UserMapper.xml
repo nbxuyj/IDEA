@@ -7,8 +7,15 @@
 
 <!--    Map<String,Object> selectMapByID(Long id);-->
 <select id="selectMapByID" resultType="map">
-    select uid,name,age,email from t_user where uid=#{id}
+    select uid,user_name,age,email from t_user where uid=#{id}
 </select>
+
+<!--    Page<User>selectPageVo(@Param("page") Page<User>page,@Param("age") Integer age);-->
+<!--    resultType 填写的是类型别名(默认的别名就是类名，且不区分大小写，在yml中配置所在位置)-->
+<select id="selectPageVo" resultType="User">
+  select uid,user_name,age,email from t_user where age>#{age}
+</select>
+
 
 <!--    <resultMap id="MedicateExceptResult" type="MedicateExcept">-->
 <!--        <result property="time" column="time"></result>-->

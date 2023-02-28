@@ -12,4 +12,4 @@ mybatis-plus:
       id-type: auto
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-
+  type-aliases-package: com.atguigu.mybatis.pojo
