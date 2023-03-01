@@ -13,3 +13,5 @@ mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   type-aliases-package: com.atguigu.mybatis.pojo
+  # 扫描通用枚举包。
+  type-enums-package: com.atguigu.mybatis.enums

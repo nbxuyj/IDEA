@@ -11,14 +11,15 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class MyBatisPlusEnumTest {
     @Autowired
     private UserMapper userMapper;
+
     @Test
-    private  void test(){
-        User user=new User();
+    private void test() {
+        User user = new User();
         user.setName("admin");
         user.setAge(33);
         user.setSex(SexEnum.FEMALE);
         int result = userMapper.insert(user);
-        System.out.println("result+"+result);
+        System.out.println("result+" + result);
 
     }
 }

@@ -33,3 +33,9 @@ https://www.gulixueyuan.com/course/516/task/22801/show
 1.当一个人操作，其它和等待。
 乐观锁：
 1.有行版本号，查询数据及对应的版本号。
+
+
+添加枚举备注：
+1.枚举值增加@EnumValue.
+2.增加配置。 type-enums-package: com.atguigu.mybatis.enums
+  
