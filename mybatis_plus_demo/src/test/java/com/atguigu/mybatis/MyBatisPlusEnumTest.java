@@ -9,11 +9,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 public class MyBatisPlusEnumTest {
+
     @Autowired
     private UserMapper userMapper;
 
     @Test
-    private void test() {
+    public void test001() {
         User user = new User();
         user.setName("admin");
         user.setAge(33);
