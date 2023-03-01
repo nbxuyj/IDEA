@@ -1,6 +1,9 @@
 package com.atguigu.mybatis;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
+import com.atguigu.mybatis.mapper.ProductMapper;
 import com.atguigu.mybatis.mapper.UserMapper;
+import com.atguigu.mybatis.pojo.Product;
 import com.atguigu.mybatis.pojo.User;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.junit.jupiter.api.Test;
@@ -11,6 +14,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class MyBatisPlusPluginTest {
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private ProductMapper productMapper;
     @Test
     public  void testPage(){
         Page<User>page=new Page<>(2,3);
@@ -36,5 +42,28 @@ public class MyBatisPlusPluginTest {
         System.out.println(page.getTotal());
         System.out.println(page.hasNext());
         System.out.println(page.hasPrevious());
+    }
+    //测试乐观锁
+    @Test
+    public  void testProduct01(){
+        //小李查询商品价格。
+        Product productLi=productMapper.selectById(1);
+        System.out.println("小李查询到商品的价格:"+productLi.getPrice());
+
+        //小李查询商品价格。
+        Product productWang=productMapper.selectById(1);
+        System.out.println("小王查询到商品的价格:"+productWang.getPrice());
+        //小李将商品价格+50
+        productLi.setPrice(productLi.getPrice()+50);
+        productMapper.updateById(productLi);
+
+        //小王将商品价格-30
+        productWang.setPrice(productWang.getPrice()-30);
+        productMapper.updateById(productWang);
+
+        //老板查询商品价格。
+        Product productLaoban=productMapper.selectById(1);
+        System.out.println("老板查询的价格:"+productLaoban.getPrice());
+
     }
 }
