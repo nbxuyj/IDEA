@@ -8,7 +8,7 @@ public class Product {
     private Long id;
     private String name;
     private Integer price;
-    @Version //标识乐观锁标识。
+    //@Version //标识乐观锁标识。
     private Integer version;
 
 }
