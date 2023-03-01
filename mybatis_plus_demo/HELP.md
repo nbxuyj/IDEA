@@ -38,4 +38,8 @@ https://www.gulixueyuan.com/course/516/task/22801/show
 添加枚举备注：
 1.枚举值增加@EnumValue.
 2.增加配置。 type-enums-package: com.atguigu.mybatis.enums
+    
+代码生成器使用步骤：
+1.添加两个依赖。
+
   
