@@ -8,7 +8,7 @@ import java.util.Collections;
 
 public class FastAutoGeneratorTest {
     public static void main(String[] args) {
-        FastAutoGenerator.create("jdbc:mysql://192.168.159.145:3306/mybatis_plus?serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false",
+        FastAutoGenerator.create("jdbc:mysql://192.168.159.145:3306/mybatis_plus_1?serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false",
                 "root", "123456")
                 .globalConfig(builder -> {
                     builder.author("atguigu") // 设置作者
@@ -23,8 +23,8 @@ public class FastAutoGeneratorTest {
                             .pathInfo(Collections.singletonMap(OutputFile.mapperXml, "D://")); // 设置mapperXml生成路径
                 })
                 .strategyConfig(builder -> {
-                    builder.addInclude("t_user") // 设置需要生成的表名
-                            .addTablePrefix("t_", "c_"); // 设置过滤表前缀
+                    builder.addInclude("product"); // 设置需要生成的表名
+                            //.addTablePrefix("t_", "c_"); // 设置过滤表前缀
                 })
                 .templateEngine(new FreemarkerTemplateEngine()) // 使用Freemarker引擎模板，默认的是Velocity引擎模板
                 .execute();
