@@ -19,13 +19,20 @@ http://localhost:8085/dept?departmentName=ddd
 1.注解版本。
     查询：http://localhost:8085/dept/1
     插入：http://localhost:8085/dept?departmentName=zs
-2.配置版本：
+2.配置版本： 完工。
+    http://localhost:8085/emp/1
+
+
 步骤：
 1). 创建Mapper接口。
 2).创建Mapper的XML文件。
+3）在yml中配置全局文件的位置。
+注：
+1）配置Mapper命名空间要指定到Mapper。 namespace="com.atguigu.springboot.mapper.EmployeeMapper
+2）id就是方法名。
+3）演示时did无值，由于驼峰命名问题写配置。
 
-问题2：配置Mapper命名空间要指定到Mapper。
- namespace="com.atguigu.springboot.mapper.EmployeeMapper
 
+## 2023.02.25
 
 
