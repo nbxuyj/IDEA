@@ -14,6 +14,9 @@ import com.aliyuncs.http.HttpResponse;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+
 import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -37,9 +40,16 @@ public class SmsDemo {
     //产品域名,开发者无需替换
     static final String domain = "dysmsapi.aliyuncs.com";
 
+    @Autowired
+    private Environment environment;
+
+
     // TODO 此处需要替换成开发者自己的AK(在阿里云访问控制台寻找)
-    static final String accessKeyId = "key";
-    static final String accessKeySecret = "secret";
+//    static final String accessKeyId = "key";
+//    static final String accessKeySecret = "secret";
+
+    String accessKeyId = environment.getProperty("accessKeyId");
+    String accessKeySecret = environment.getProperty("accessKeySecret");
 
     public static SendSmsResponse sendSms() throws ClientException {
 
