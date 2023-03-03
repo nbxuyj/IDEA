@@ -48,10 +48,10 @@ public class SmsDemo {
 //    static final String accessKeyId = "key";
 //    static final String accessKeySecret = "secret";
 
-    String accessKeyId = environment.getProperty("accessKeyId");
-    String accessKeySecret = environment.getProperty("accessKeySecret");
+      String accessKeyId = environment.getProperty("accessKeyId");
+      String accessKeySecret = environment.getProperty("accessKeySecret");
 
-    public static SendSmsResponse sendSms() throws ClientException {
+    public  SendSmsResponse sendSms() throws ClientException {
 
         //可自助调整超时时间
         System.setProperty("sun.net.client.defaultConnectTimeout", "10000");
