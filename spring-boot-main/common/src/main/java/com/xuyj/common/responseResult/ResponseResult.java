@@ -39,7 +39,8 @@ public class ResponseResult implements Serializable {
         this.data = data;
     }
 
-    public ResponseResult() {}
+    public ResponseResult() {
+    }
 
     public ResponseResult(Integer msgCode, String message) {
         this.msgCode = msgCode;
@@ -48,21 +49,21 @@ public class ResponseResult implements Serializable {
     }
 
     /**
-     *
      * success:(执行成功,无数据返回).
      * date: 2018年5月16日 下午3:24:34
+     *
      * @return
      */
-    public static  ResponseResult success() {
+    public static ResponseResult success() {
         ResponseResult result = new ResponseResult();
         result.setResultCode(ResultCode.SUCCESS);
         return result;
     }
 
     /**
-     *
      * success:(执行成功,有数据返回).
      * date: 2018年5月16日 下午3:25:05
+     *
      * @param data
      * @return
      */
@@ -74,27 +75,27 @@ public class ResponseResult implements Serializable {
     }
 
     /**
-     *
      * failure:(执行失败,无数据返回,返回错误信息).
      * date: 2018年5月16日 下午3:25:31
+     *
      * @param resultCode
      * @return
      */
-    public static  ResponseResult failure(ResultCode resultCode) {
+    public static ResponseResult failure(ResultCode resultCode) {
         ResponseResult result = new ResponseResult();
         result.setResultCode(resultCode);
         return result;
     }
 
     /**
-     *
      * failure:(执行失败,有数据返回,返回错误信息).
      * date: 2018年5月16日 下午3:26:16
+     *
      * @param resultCode
      * @param data
      * @return
      */
-    public static  ResponseResult failure(ResultCode resultCode, Object data) {
+    public static ResponseResult failure(ResultCode resultCode, Object data) {
         ResponseResult result = new ResponseResult();
         result.setResultCode(resultCode);
         result.setData(data);
@@ -102,14 +103,14 @@ public class ResponseResult implements Serializable {
     }
 
     /**
-     *
      * failure:(系统运行时异常错误).
      * date: 2018年5月17日 下午1:43:50
+     *
      * @param msgCode
      * @param data
      * @return
      */
-    public static  ResponseResult failure(Integer msgCode,String message, Object data) {
+    public static ResponseResult failure(Integer msgCode, String message, Object data) {
         ResponseResult result = new ResponseResult();
         result.setMsgCode(msgCode);
         result.setMessage(message);
@@ -118,13 +119,13 @@ public class ResponseResult implements Serializable {
     }
 
     /**
-     *
      * failure:(自定义异常).
      * date: 2018年7月13日 下午2:25:15
+     *
      * @param message 自定义异常信息
      * @return
      */
-    public static  ResponseResult failure(String message) {
+    public static ResponseResult failure(String message) {
         ResponseResult result = new ResponseResult();
         result.setMsgCode(-1);
         result.setMessage(message);
@@ -132,9 +133,9 @@ public class ResponseResult implements Serializable {
     }
 
     /**
-     *
      * setResultCode:(解析参数ResultCode).
      * date: 2018年5月16日 下午3:26:34
+     *
      * @param code
      */
     public void setResultCode(ResultCode code) {
@@ -143,9 +144,9 @@ public class ResponseResult implements Serializable {
     }
 
     /**
-     *
      * SysErrorCode:(解析参数SysErrorCode).
      * date: 2018年5月16日 下午3:26:34
+     *
      * @param code
      */
     public void setSysErrorCode(SysErrorCode code) {

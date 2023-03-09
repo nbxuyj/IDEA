@@ -9,8 +9,9 @@ public class HelloController {
 
     @Value("${person.last-name}")
     private String name;
+
     @GetMapping("/sayHello")
-    public String sayHello()    {
-        return "Hello "+name;
+    public String sayHello() {
+        return "Hello " + name;
     }
 }

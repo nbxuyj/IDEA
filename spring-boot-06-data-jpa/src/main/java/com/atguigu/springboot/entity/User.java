@@ -14,6 +14,7 @@ public class User {
     private String lastName;
     @Column //省略默认列名就是属性名。
     private String email;
+
     public Integer getId() {
         return id;
     }
@@ -37,7 +38,6 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-
 
 
 }

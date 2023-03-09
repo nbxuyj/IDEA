@@ -1,61 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="module_spring-boot-main" default="compile.module.spring-boot-main">
-  <dirname property="module.spring-boot-main.basedir" file="${ant.file.module_spring-boot-main}"/>
-  
-  <property name="module.jdk.home.spring-boot-main" value="${jdk.home.1.8}"/>
-  <property name="module.jdk.bin.spring-boot-main" value="${jdk.bin.1.8}"/>
-  <property name="module.jdk.classpath.spring-boot-main" value="jdk.classpath.1.8"/>
-  
-  <property name="compiler.args.spring-boot-main" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
-  
-  <property name="spring-boot-main.output.dir" value="${module.spring-boot-main.basedir}/target/classes"/>
-  <property name="spring-boot-main.testoutput.dir" value="${module.spring-boot-main.basedir}/target/test-classes"/>
-  
-  <path id="spring-boot-main.module.bootclasspath">
-    <!-- Paths to be included in compilation bootclasspath -->
-  </path>
-  
-  <path id="spring-boot-main.module.production.classpath">
-    <path refid="${module.jdk.classpath.spring-boot-main}"/>
-    <pathelement location="${pojo.output.dir}"/>
-  </path>
-  
-  <path id="spring-boot-main.runtime.production.module.classpath">
-    <pathelement location="${spring-boot-main.output.dir}"/>
-    <path refid="pojo.runtime.production.module.classpath"/>
-  </path>
-  
-  <path id="spring-boot-main.module.classpath">
-    <path refid="${module.jdk.classpath.spring-boot-main}"/>
-    <pathelement location="${spring-boot-main.output.dir}"/>
-    <pathelement location="${pojo.testoutput.dir}"/>
-    <pathelement location="${pojo.output.dir}"/>
-  </path>
-  
-  <path id="spring-boot-main.runtime.module.classpath">
-    <pathelement location="${spring-boot-main.testoutput.dir}"/>
-    <pathelement location="${spring-boot-main.output.dir}"/>
-    <path refid="pojo.runtime.module.classpath"/>
-  </path>
-  
-  
-  <patternset id="excluded.from.module.spring-boot-main">
-    <patternset refid="ignored.files"/>
-  </patternset>
-  
-  <patternset id="excluded.from.compilation.spring-boot-main">
-    <patternset refid="excluded.from.module.spring-boot-main"/>
-  </patternset>
-  
-  
-  <target name="compile.module.spring-boot-main" depends="compile.module.spring-boot-main.production,compile.module.spring-boot-main.tests" description="Compile module spring-boot-main"/>
-  
-  <target name="compile.module.spring-boot-main.production" depends="register.custom.compilers,compile.module.pojo" description="Compile module spring-boot-main; production classes"/>
-  
-  <target name="compile.module.spring-boot-main.tests" depends="register.custom.compilers,compile.module.spring-boot-main.production" description="compile module spring-boot-main; test classes" unless="skip.tests"/>
-  
-  <target name="clean.module.spring-boot-main" description="cleanup module">
-    <delete dir="${spring-boot-main.output.dir}"/>
-    <delete dir="${spring-boot-main.testoutput.dir}"/>
-  </target>
+    <dirname property="module.spring-boot-main.basedir" file="${ant.file.module_spring-boot-main}"/>
+
+    <property name="module.jdk.home.spring-boot-main" value="${jdk.home.1.8}"/>
+    <property name="module.jdk.bin.spring-boot-main" value="${jdk.bin.1.8}"/>
+    <property name="module.jdk.classpath.spring-boot-main" value="jdk.classpath.1.8"/>
+
+    <property name="compiler.args.spring-boot-main" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+
+    <property name="spring-boot-main.output.dir" value="${module.spring-boot-main.basedir}/target/classes"/>
+    <property name="spring-boot-main.testoutput.dir" value="${module.spring-boot-main.basedir}/target/test-classes"/>
+
+    <path id="spring-boot-main.module.bootclasspath">
+        <!-- Paths to be included in compilation bootclasspath -->
+    </path>
+
+    <path id="spring-boot-main.module.production.classpath">
+        <path refid="${module.jdk.classpath.spring-boot-main}"/>
+        <pathelement location="${pojo.output.dir}"/>
+    </path>
+
+    <path id="spring-boot-main.runtime.production.module.classpath">
+        <pathelement location="${spring-boot-main.output.dir}"/>
+        <path refid="pojo.runtime.production.module.classpath"/>
+    </path>
+
+    <path id="spring-boot-main.module.classpath">
+        <path refid="${module.jdk.classpath.spring-boot-main}"/>
+        <pathelement location="${spring-boot-main.output.dir}"/>
+        <pathelement location="${pojo.testoutput.dir}"/>
+        <pathelement location="${pojo.output.dir}"/>
+    </path>
+
+    <path id="spring-boot-main.runtime.module.classpath">
+        <pathelement location="${spring-boot-main.testoutput.dir}"/>
+        <pathelement location="${spring-boot-main.output.dir}"/>
+        <path refid="pojo.runtime.module.classpath"/>
+    </path>
+
+
+    <patternset id="excluded.from.module.spring-boot-main">
+        <patternset refid="ignored.files"/>
+    </patternset>
+
+    <patternset id="excluded.from.compilation.spring-boot-main">
+        <patternset refid="excluded.from.module.spring-boot-main"/>
+    </patternset>
+
+
+    <target name="compile.module.spring-boot-main"
+            depends="compile.module.spring-boot-main.production,compile.module.spring-boot-main.tests"
+            description="Compile module spring-boot-main"/>
+
+    <target name="compile.module.spring-boot-main.production" depends="register.custom.compilers,compile.module.pojo"
+            description="Compile module spring-boot-main; production classes"/>
+
+    <target name="compile.module.spring-boot-main.tests"
+            depends="register.custom.compilers,compile.module.spring-boot-main.production"
+            description="compile module spring-boot-main; test classes" unless="skip.tests"/>
+
+    <target name="clean.module.spring-boot-main" description="cleanup module">
+        <delete dir="${spring-boot-main.output.dir}"/>
+        <delete dir="${spring-boot-main.testoutput.dir}"/>
+    </target>
 </project>

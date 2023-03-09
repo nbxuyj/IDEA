@@ -13,9 +13,7 @@ public enum ResultCode {
     PARAM_IS_BLANK(10002, "参数为空"),
     PARAM_TYPE_BIND_ERROR(10003, "参数类型错误"),
     PARAM_NOT_COMPLETE(10004, "参数缺失"),
-    PARAM_INCORRECT_REQUEST(10005, "请求参数类型有误")
-
-    ;
+    PARAM_INCORRECT_REQUEST(10005, "请求参数类型有误");
 
     /**
      * 初始化构造

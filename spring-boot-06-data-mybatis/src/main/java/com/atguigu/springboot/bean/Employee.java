@@ -1,10 +1,10 @@
 package com.atguigu.springboot.bean;
 
 public class Employee {
-    private  Integer id;
-    private  String lastName;
-    private  Integer gender;
-    private  String email;
+    private Integer id;
+    private String lastName;
+    private Integer gender;
+    private String email;
     private Integer dId;
 
     public Integer getId() {

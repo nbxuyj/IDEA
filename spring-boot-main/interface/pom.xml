@@ -11,11 +11,11 @@
 
     <artifactId>interface</artifactId>
     <dependencies>
-    <dependency>
-        <groupId>com.xuyj</groupId>
-        <artifactId>pojo</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-    </dependency>
+        <dependency>
+            <groupId>com.xuyj</groupId>
+            <artifactId>pojo</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>com.xuyj</groupId>
             <artifactId>common</artifactId>

@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author atguigu
@@ -41,6 +41,7 @@ public class Product implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
     public String getName() {
         return name;
     }
@@ -48,6 +49,7 @@ public class Product implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
+
     public Integer getPrice() {
         return price;
     }
@@ -55,6 +57,7 @@ public class Product implements Serializable {
     public void setPrice(Integer price) {
         this.price = price;
     }
+
     public Integer getVersion() {
         return version;
     }
@@ -66,10 +69,10 @@ public class Product implements Serializable {
     @Override
     public String toString() {
         return "Product{" +
-            "id=" + id +
-            ", name=" + name +
-            ", price=" + price +
-            ", version=" + version +
-        "}";
+                "id=" + id +
+                ", name=" + name +
+                ", price=" + price +
+                ", version=" + version +
+                "}";
     }
 }

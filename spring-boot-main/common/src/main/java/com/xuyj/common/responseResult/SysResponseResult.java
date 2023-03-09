@@ -4,7 +4,6 @@
  * Package Name:org.cloudplatform.common.responseResult
  * Date:2018年5月16日下午6:50:30
  * Copyright (c) 2018, chenzhou1025@126.com All Rights Reserved.
- *
  */
 
 package com.xuyj.common.responseResult;
@@ -17,7 +16,7 @@ package com.xuyj.common.responseResult;
  * @author TANCHAO
  * @version
  */
-public class SysResponseResult{
+public class SysResponseResult {
 
     /**
      *
@@ -27,7 +26,7 @@ public class SysResponseResult{
      * @param data
      * @return
      */
-    public static  ResponseResult failure(SysErrorCode SysErrorCode) {
+    public static ResponseResult failure(SysErrorCode SysErrorCode) {
         ResponseResult result = new ResponseResult();
         result.setSysErrorCode(SysErrorCode);
         return result;

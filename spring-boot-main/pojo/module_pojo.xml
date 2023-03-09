@@ -1,105 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="module_pojo" default="compile.module.pojo">
-  <dirname property="module.pojo.basedir" file="${ant.file.module_pojo}"/>
-  
-  <property name="module.jdk.home.pojo" value="${project.jdk.home}"/>
-  <property name="module.jdk.bin.pojo" value="${project.jdk.bin}"/>
-  <property name="module.jdk.classpath.pojo" value="${project.jdk.classpath}"/>
-  
-  <property name="compiler.args.pojo" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
-  
-  <property name="pojo.output.dir" value="${module.pojo.basedir}/target/classes"/>
-  <property name="pojo.testoutput.dir" value="${module.pojo.basedir}/target/test-classes"/>
-  
-  <path id="pojo.module.bootclasspath">
-    <!-- Paths to be included in compilation bootclasspath -->
-  </path>
-  
-  <path id="pojo.module.production.classpath">
-    <path refid="${module.jdk.classpath.pojo}"/>
-  </path>
-  
-  <path id="pojo.runtime.production.module.classpath">
-    <pathelement location="${pojo.output.dir}"/>
-  </path>
-  
-  <path id="pojo.module.classpath">
-    <path refid="${module.jdk.classpath.pojo}"/>
-    <pathelement location="${pojo.output.dir}"/>
-  </path>
-  
-  <path id="pojo.runtime.module.classpath">
-    <pathelement location="${pojo.testoutput.dir}"/>
-    <pathelement location="${pojo.output.dir}"/>
-  </path>
-  
-  
-  <patternset id="excluded.from.module.pojo">
-    <patternset refid="ignored.files"/>
-  </patternset>
-  
-  <patternset id="excluded.from.compilation.pojo">
-    <patternset refid="excluded.from.module.pojo"/>
-  </patternset>
-  
-  <path id="pojo.module.sourcepath">
-    <dirset dir="${module.pojo.basedir}">
-      <include name="src/main/java"/>
-      <include name="src/main/resources"/>
-    </dirset>
-  </path>
-  
-  <path id="pojo.module.test.sourcepath">
-    <dirset dir="${module.pojo.basedir}">
-      <include name="src/test/java"/>
-    </dirset>
-  </path>
-  
-  
-  <target name="compile.module.pojo" depends="compile.module.pojo.production,compile.module.pojo.tests" description="Compile module pojo"/>
-  
-  <target name="compile.module.pojo.production" depends="register.custom.compilers" description="Compile module pojo; production classes">
-    <mkdir dir="${pojo.output.dir}"/>
-    <javac2 destdir="${pojo.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.pojo}/javac">
-      <compilerarg line="${compiler.args.pojo}"/>
-      <bootclasspath refid="pojo.module.bootclasspath"/>
-      <classpath refid="pojo.module.production.classpath"/>
-      <src refid="pojo.module.sourcepath"/>
-      <patternset refid="excluded.from.compilation.pojo"/>
-    </javac2>
-    
-    <copy todir="${pojo.output.dir}">
-      <fileset dir="${module.pojo.basedir}/src/main/java">
-        <patternset refid="compiler.resources"/>
-        <type type="file"/>
-      </fileset>
-      <fileset dir="${module.pojo.basedir}/src/main/resources">
-        <patternset refid="compiler.resources"/>
-        <type type="file"/>
-      </fileset>
-    </copy>
-  </target>
-  
-  <target name="compile.module.pojo.tests" depends="register.custom.compilers,compile.module.pojo.production" description="compile module pojo; test classes" unless="skip.tests">
-    <mkdir dir="${pojo.testoutput.dir}"/>
-    <javac2 destdir="${pojo.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.pojo}/javac">
-      <compilerarg line="${compiler.args.pojo}"/>
-      <bootclasspath refid="pojo.module.bootclasspath"/>
-      <classpath refid="pojo.module.classpath"/>
-      <src refid="pojo.module.test.sourcepath"/>
-      <patternset refid="excluded.from.compilation.pojo"/>
-    </javac2>
-    
-    <copy todir="${pojo.testoutput.dir}">
-      <fileset dir="${module.pojo.basedir}/src/test/java">
-        <patternset refid="compiler.resources"/>
-        <type type="file"/>
-      </fileset>
-    </copy>
-  </target>
-  
-  <target name="clean.module.pojo" description="cleanup module">
-    <delete dir="${pojo.output.dir}"/>
-    <delete dir="${pojo.testoutput.dir}"/>
-  </target>
+    <dirname property="module.pojo.basedir" file="${ant.file.module_pojo}"/>
+
+    <property name="module.jdk.home.pojo" value="${project.jdk.home}"/>
+    <property name="module.jdk.bin.pojo" value="${project.jdk.bin}"/>
+    <property name="module.jdk.classpath.pojo" value="${project.jdk.classpath}"/>
+
+    <property name="compiler.args.pojo" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+
+    <property name="pojo.output.dir" value="${module.pojo.basedir}/target/classes"/>
+    <property name="pojo.testoutput.dir" value="${module.pojo.basedir}/target/test-classes"/>
+
+    <path id="pojo.module.bootclasspath">
+        <!-- Paths to be included in compilation bootclasspath -->
+    </path>
+
+    <path id="pojo.module.production.classpath">
+        <path refid="${module.jdk.classpath.pojo}"/>
+    </path>
+
+    <path id="pojo.runtime.production.module.classpath">
+        <pathelement location="${pojo.output.dir}"/>
+    </path>
+
+    <path id="pojo.module.classpath">
+        <path refid="${module.jdk.classpath.pojo}"/>
+        <pathelement location="${pojo.output.dir}"/>
+    </path>
+
+    <path id="pojo.runtime.module.classpath">
+        <pathelement location="${pojo.testoutput.dir}"/>
+        <pathelement location="${pojo.output.dir}"/>
+    </path>
+
+
+    <patternset id="excluded.from.module.pojo">
+        <patternset refid="ignored.files"/>
+    </patternset>
+
+    <patternset id="excluded.from.compilation.pojo">
+        <patternset refid="excluded.from.module.pojo"/>
+    </patternset>
+
+    <path id="pojo.module.sourcepath">
+        <dirset dir="${module.pojo.basedir}">
+            <include name="src/main/java"/>
+            <include name="src/main/resources"/>
+        </dirset>
+    </path>
+
+    <path id="pojo.module.test.sourcepath">
+        <dirset dir="${module.pojo.basedir}">
+            <include name="src/test/java"/>
+        </dirset>
+    </path>
+
+
+    <target name="compile.module.pojo" depends="compile.module.pojo.production,compile.module.pojo.tests"
+            description="Compile module pojo"/>
+
+    <target name="compile.module.pojo.production" depends="register.custom.compilers"
+            description="Compile module pojo; production classes">
+        <mkdir dir="${pojo.output.dir}"/>
+        <javac2 destdir="${pojo.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}"
+                memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.pojo}/javac">
+            <compilerarg line="${compiler.args.pojo}"/>
+            <bootclasspath refid="pojo.module.bootclasspath"/>
+            <classpath refid="pojo.module.production.classpath"/>
+            <src refid="pojo.module.sourcepath"/>
+            <patternset refid="excluded.from.compilation.pojo"/>
+        </javac2>
+
+        <copy todir="${pojo.output.dir}">
+            <fileset dir="${module.pojo.basedir}/src/main/java">
+                <patternset refid="compiler.resources"/>
+                <type type="file"/>
+            </fileset>
+            <fileset dir="${module.pojo.basedir}/src/main/resources">
+                <patternset refid="compiler.resources"/>
+                <type type="file"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="compile.module.pojo.tests" depends="register.custom.compilers,compile.module.pojo.production"
+            description="compile module pojo; test classes" unless="skip.tests">
+        <mkdir dir="${pojo.testoutput.dir}"/>
+        <javac2 destdir="${pojo.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}"
+                memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.pojo}/javac">
+            <compilerarg line="${compiler.args.pojo}"/>
+            <bootclasspath refid="pojo.module.bootclasspath"/>
+            <classpath refid="pojo.module.classpath"/>
+            <src refid="pojo.module.test.sourcepath"/>
+            <patternset refid="excluded.from.compilation.pojo"/>
+        </javac2>
+
+        <copy todir="${pojo.testoutput.dir}">
+            <fileset dir="${module.pojo.basedir}/src/test/java">
+                <patternset refid="compiler.resources"/>
+                <type type="file"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="clean.module.pojo" description="cleanup module">
+        <delete dir="${pojo.output.dir}"/>
+        <delete dir="${pojo.testoutput.dir}"/>
+    </target>
 </project>

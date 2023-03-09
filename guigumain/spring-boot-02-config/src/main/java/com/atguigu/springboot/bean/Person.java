@@ -9,13 +9,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 /*
-* 告诉springboot将本类中的所有属性和配置文件中相关的配置进行绑定
-* */
+ * 告诉springboot将本类中的所有属性和配置文件中相关的配置进行绑定
+ * */
 //@PropertySource(value = {"classpath:person.properties"})
-
-
-
-
 
 
 @Component
@@ -27,16 +23,16 @@ public class Person {
     </bean>
     * */
 
-//    @Value("${person.last-name}")
+    //    @Value("${person.last-name}")
     private String lastName;
-//    @Value("#{11*2}")
+    //    @Value("#{11*2}")
     private Integer age;
-//    @Value("true")
+    //    @Value("true")
     private Boolean boss;
     private Date birth;
 
-    private Map<String,Object> maps;
-    private List<Object>lists;
+    private Map<String, Object> maps;
+    private List<Object> lists;
     private Dog dog;
 
     public String getLastName() {

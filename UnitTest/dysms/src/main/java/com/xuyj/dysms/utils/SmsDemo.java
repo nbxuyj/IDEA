@@ -1,6 +1,7 @@
 package com.xuyj.dysms.utils;
 
 //package com.springboot.SecKill.SMSVerification;
+
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.IAcsClient;
 import com.aliyuncs.dysmsapi.model.v20170525.QuerySendDetailsRequest;
@@ -29,7 +30,7 @@ import java.util.UUID;
  * 工程依赖了2个jar包(存放在工程的libs目录下)
  * 1:aliyun-java-sdk-core.jar
  * 2:aliyun-java-sdk-dysmsapi.jar
- *
+ * <p>
  * 备注:Demo工程编码采用UTF-8
  * 国际短信发送请勿参照此DEMO
  */
@@ -48,10 +49,10 @@ public class SmsDemo {
 //    static final String accessKeyId = "key";
 //    static final String accessKeySecret = "secret";
 
-      String accessKeyId = environment.getProperty("accessKeyId");
-      String accessKeySecret = environment.getProperty("accessKeySecret");
+    String accessKeyId = environment.getProperty("accessKeyId");
+    String accessKeySecret = environment.getProperty("accessKeySecret");
 
-    public  SendSmsResponse sendSms() throws ClientException {
+    public SendSmsResponse sendSms() throws ClientException {
 
         //可自助调整超时时间
         System.setProperty("sun.net.client.defaultConnectTimeout", "10000");
@@ -131,15 +132,14 @@ public class SmsDemo {
         Thread.sleep(3000L);
 
         //查明细
-        if(response.getCode() != null && response.getCode().equals("OK")) {
+        if (response.getCode() != null && response.getCode().equals("OK")) {
             QuerySendDetailsResponse querySendDetailsResponse = querySendDetails(response.getBizId());
             System.out.println("短信明细查询接口返回数据----------------");
             System.out.println("Code=" + querySendDetailsResponse.getCode());
             System.out.println("Message=" + querySendDetailsResponse.getMessage());
             int i = 0;
-            for(QuerySendDetailsResponse.SmsSendDetailDTO smsSendDetailDTO : querySendDetailsResponse.getSmsSendDetailDTOs())
-            {
-                System.out.println("SmsSendDetailDTO["+i+"]:");
+            for (QuerySendDetailsResponse.SmsSendDetailDTO smsSendDetailDTO : querySendDetailsResponse.getSmsSendDetailDTOs()) {
+                System.out.println("SmsSendDetailDTO[" + i + "]:");
                 System.out.println("Content=" + smsSendDetailDTO.getContent());
                 System.out.println("ErrCode=" + smsSendDetailDTO.getErrCode());
                 System.out.println("OutId=" + smsSendDetailDTO.getOutId());

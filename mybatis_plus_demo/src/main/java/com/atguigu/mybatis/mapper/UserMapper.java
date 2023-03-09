@@ -11,16 +11,17 @@ import java.util.Map;
 @Repository
 public interface UserMapper extends BaseMapper<User> {
     /* 根据id查询用户信息的map集合*/
-    Map<String,Object> selectMapByID(Long id);
+    Map<String, Object> selectMapByID(Long id);
 
     //通过年龄查询用户信息并分页。
 
     /**
      * 通过年龄查询用户信息并分页。
+     *
      * @param page MyBatis_Plus所提供的分页对象，必须位于第一个参数的位置。
      * @param age
      * @return
      */
-    Page<User>selectPageVo(@Param("page") Page<User>page,@Param("age") Integer age);
+    Page<User> selectPageVo(@Param("page") Page<User> page, @Param("age") Integer age);
 }
 

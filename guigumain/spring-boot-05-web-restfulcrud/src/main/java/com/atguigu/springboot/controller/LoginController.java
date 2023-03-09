@@ -12,21 +12,20 @@ import java.util.Map;
 
 @Controller
 public class LoginController {
-//    @RequestMapping(value = "/user/login",method = RequestMethod.POST)
+    //    @RequestMapping(value = "/user/login",method = RequestMethod.POST)
     @PostMapping("/user/login")
     public String login(@RequestParam String username,
-                        @RequestParam  String password,
-                        Map<String,Object>map, HttpSession session
-                        ){
+                        @RequestParam String password,
+                        Map<String, Object> map, HttpSession session
+    ) {
 
-        if (!StringUtils.isEmpty(username) && "123456".equals(password)){
+        if (!StringUtils.isEmpty(username) && "123456".equals(password)) {
             //登陆成功，防止表单提交，可以重定向。
-            session.setAttribute("loginUser",username);
+            session.setAttribute("loginUser", username);
             return "redirect:/main.html";
 //            return "dashboard";
-        }else
-        {
-            map.put("msg","用户名密码错误");
+        } else {
+            map.put("msg", "用户名密码错误");
             //登陆错误，返回登陆页面。
             return "login";
 

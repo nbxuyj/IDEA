@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * <p>
- *  前端控制器
+ * 前端控制器
  * </p>
  *
  * @author atguigu
@@ -31,6 +31,6 @@ public class ProductController {
     @GetMapping("/get")
     public String GetUserInfo() {
         Product service = myService.getById(1);
-        return service.toString() ;
+        return service.toString();
     }
 }

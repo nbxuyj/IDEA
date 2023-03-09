@@ -112,7 +112,7 @@ public class MyBatisPlusTest {
     }
 
     @Test
-    public  void testmyQuery(){
+    public void testmyQuery() {
         Map<String, Object> map = userMapper.selectMapByID(1630124827874426884L);
         System.out.println(map);
     }

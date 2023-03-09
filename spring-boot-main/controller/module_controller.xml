@@ -1,125 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="module_controller" default="compile.module.controller">
-  <dirname property="module.controller.basedir" file="${ant.file.module_controller}"/>
-  
-  <property name="module.jdk.home.controller" value="${project.jdk.home}"/>
-  <property name="module.jdk.bin.controller" value="${project.jdk.bin}"/>
-  <property name="module.jdk.classpath.controller" value="${project.jdk.classpath}"/>
-  
-  <property name="compiler.args.controller" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
-  
-  <property name="controller.output.dir" value="${module.controller.basedir}/target/classes"/>
-  <property name="controller.testoutput.dir" value="${module.controller.basedir}/target/test-classes"/>
-  
-  <path id="controller.module.bootclasspath">
-    <!-- Paths to be included in compilation bootclasspath -->
-  </path>
-  
-  <path id="controller.module.production.classpath">
-    <path refid="${module.jdk.classpath.controller}"/>
-    <pathelement location="${service.output.dir}"/>
-    <pathelement location="${interface.output.dir}"/>
-    <pathelement location="${dao.output.dir}"/>
-    <pathelement location="${pojo.output.dir}"/>
-  </path>
-  
-  <path id="controller.runtime.production.module.classpath">
-    <pathelement location="${controller.output.dir}"/>
-    <path refid="service.runtime.production.module.classpath"/>
-    <path refid="interface.runtime.production.module.classpath"/>
-    <path refid="dao.runtime.production.module.classpath"/>
-    <path refid="pojo.runtime.production.module.classpath"/>
-  </path>
-  
-  <path id="controller.module.classpath">
-    <path refid="${module.jdk.classpath.controller}"/>
-    <pathelement location="${controller.output.dir}"/>
-    <pathelement location="${service.testoutput.dir}"/>
-    <pathelement location="${service.output.dir}"/>
-    <pathelement location="${interface.testoutput.dir}"/>
-    <pathelement location="${interface.output.dir}"/>
-    <pathelement location="${dao.testoutput.dir}"/>
-    <pathelement location="${dao.output.dir}"/>
-    <pathelement location="${pojo.testoutput.dir}"/>
-    <pathelement location="${pojo.output.dir}"/>
-  </path>
-  
-  <path id="controller.runtime.module.classpath">
-    <pathelement location="${controller.testoutput.dir}"/>
-    <pathelement location="${controller.output.dir}"/>
-    <path refid="service.runtime.module.classpath"/>
-    <path refid="interface.runtime.module.classpath"/>
-    <path refid="dao.runtime.module.classpath"/>
-    <path refid="pojo.runtime.module.classpath"/>
-  </path>
-  
-  
-  <patternset id="excluded.from.module.controller">
-    <patternset refid="ignored.files"/>
-  </patternset>
-  
-  <patternset id="excluded.from.compilation.controller">
-    <patternset refid="excluded.from.module.controller"/>
-  </patternset>
-  
-  <path id="controller.module.sourcepath">
-    <dirset dir="${module.controller.basedir}">
-      <include name="src/main/java"/>
-      <include name="src/main/resources"/>
-    </dirset>
-  </path>
-  
-  <path id="controller.module.test.sourcepath">
-    <dirset dir="${module.controller.basedir}">
-      <include name="src/test/java"/>
-    </dirset>
-  </path>
-  
-  
-  <target name="compile.module.controller" depends="compile.module.controller.production,compile.module.controller.tests" description="Compile module controller"/>
-  
-  <target name="compile.module.controller.production" depends="register.custom.compilers,compile.module.service,compile.module.interface,compile.module.dao,compile.module.pojo" description="Compile module controller; production classes">
-    <mkdir dir="${controller.output.dir}"/>
-    <javac2 destdir="${controller.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.controller}/javac">
-      <compilerarg line="${compiler.args.controller}"/>
-      <bootclasspath refid="controller.module.bootclasspath"/>
-      <classpath refid="controller.module.production.classpath"/>
-      <src refid="controller.module.sourcepath"/>
-      <patternset refid="excluded.from.compilation.controller"/>
-    </javac2>
-    
-    <copy todir="${controller.output.dir}">
-      <fileset dir="${module.controller.basedir}/src/main/java">
-        <patternset refid="compiler.resources"/>
-        <type type="file"/>
-      </fileset>
-      <fileset dir="${module.controller.basedir}/src/main/resources">
-        <patternset refid="compiler.resources"/>
-        <type type="file"/>
-      </fileset>
-    </copy>
-  </target>
-  
-  <target name="compile.module.controller.tests" depends="register.custom.compilers,compile.module.controller.production" description="compile module controller; test classes" unless="skip.tests">
-    <mkdir dir="${controller.testoutput.dir}"/>
-    <javac2 destdir="${controller.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.controller}/javac">
-      <compilerarg line="${compiler.args.controller}"/>
-      <bootclasspath refid="controller.module.bootclasspath"/>
-      <classpath refid="controller.module.classpath"/>
-      <src refid="controller.module.test.sourcepath"/>
-      <patternset refid="excluded.from.compilation.controller"/>
-    </javac2>
-    
-    <copy todir="${controller.testoutput.dir}">
-      <fileset dir="${module.controller.basedir}/src/test/java">
-        <patternset refid="compiler.resources"/>
-        <type type="file"/>
-      </fileset>
-    </copy>
-  </target>
-  
-  <target name="clean.module.controller" description="cleanup module">
-    <delete dir="${controller.output.dir}"/>
-    <delete dir="${controller.testoutput.dir}"/>
-  </target>
+    <dirname property="module.controller.basedir" file="${ant.file.module_controller}"/>
+
+    <property name="module.jdk.home.controller" value="${project.jdk.home}"/>
+    <property name="module.jdk.bin.controller" value="${project.jdk.bin}"/>
+    <property name="module.jdk.classpath.controller" value="${project.jdk.classpath}"/>
+
+    <property name="compiler.args.controller" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+
+    <property name="controller.output.dir" value="${module.controller.basedir}/target/classes"/>
+    <property name="controller.testoutput.dir" value="${module.controller.basedir}/target/test-classes"/>
+
+    <path id="controller.module.bootclasspath">
+        <!-- Paths to be included in compilation bootclasspath -->
+    </path>
+
+    <path id="controller.module.production.classpath">
+        <path refid="${module.jdk.classpath.controller}"/>
+        <pathelement location="${service.output.dir}"/>
+        <pathelement location="${interface.output.dir}"/>
+        <pathelement location="${dao.output.dir}"/>
+        <pathelement location="${pojo.output.dir}"/>
+    </path>
+
+    <path id="controller.runtime.production.module.classpath">
+        <pathelement location="${controller.output.dir}"/>
+        <path refid="service.runtime.production.module.classpath"/>
+        <path refid="interface.runtime.production.module.classpath"/>
+        <path refid="dao.runtime.production.module.classpath"/>
+        <path refid="pojo.runtime.production.module.classpath"/>
+    </path>
+
+    <path id="controller.module.classpath">
+        <path refid="${module.jdk.classpath.controller}"/>
+        <pathelement location="${controller.output.dir}"/>
+        <pathelement location="${service.testoutput.dir}"/>
+        <pathelement location="${service.output.dir}"/>
+        <pathelement location="${interface.testoutput.dir}"/>
+        <pathelement location="${interface.output.dir}"/>
+        <pathelement location="${dao.testoutput.dir}"/>
+        <pathelement location="${dao.output.dir}"/>
+        <pathelement location="${pojo.testoutput.dir}"/>
+        <pathelement location="${pojo.output.dir}"/>
+    </path>
+
+    <path id="controller.runtime.module.classpath">
+        <pathelement location="${controller.testoutput.dir}"/>
+        <pathelement location="${controller.output.dir}"/>
+        <path refid="service.runtime.module.classpath"/>
+        <path refid="interface.runtime.module.classpath"/>
+        <path refid="dao.runtime.module.classpath"/>
+        <path refid="pojo.runtime.module.classpath"/>
+    </path>
+
+
+    <patternset id="excluded.from.module.controller">
+        <patternset refid="ignored.files"/>
+    </patternset>
+
+    <patternset id="excluded.from.compilation.controller">
+        <patternset refid="excluded.from.module.controller"/>
+    </patternset>
+
+    <path id="controller.module.sourcepath">
+        <dirset dir="${module.controller.basedir}">
+            <include name="src/main/java"/>
+            <include name="src/main/resources"/>
+        </dirset>
+    </path>
+
+    <path id="controller.module.test.sourcepath">
+        <dirset dir="${module.controller.basedir}">
+            <include name="src/test/java"/>
+        </dirset>
+    </path>
+
+
+    <target name="compile.module.controller"
+            depends="compile.module.controller.production,compile.module.controller.tests"
+            description="Compile module controller"/>
+
+    <target name="compile.module.controller.production"
+            depends="register.custom.compilers,compile.module.service,compile.module.interface,compile.module.dao,compile.module.pojo"
+            description="Compile module controller; production classes">
+        <mkdir dir="${controller.output.dir}"/>
+        <javac2 destdir="${controller.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}"
+                memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.controller}/javac">
+            <compilerarg line="${compiler.args.controller}"/>
+            <bootclasspath refid="controller.module.bootclasspath"/>
+            <classpath refid="controller.module.production.classpath"/>
+            <src refid="controller.module.sourcepath"/>
+            <patternset refid="excluded.from.compilation.controller"/>
+        </javac2>
+
+        <copy todir="${controller.output.dir}">
+            <fileset dir="${module.controller.basedir}/src/main/java">
+                <patternset refid="compiler.resources"/>
+                <type type="file"/>
+            </fileset>
+            <fileset dir="${module.controller.basedir}/src/main/resources">
+                <patternset refid="compiler.resources"/>
+                <type type="file"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="compile.module.controller.tests"
+            depends="register.custom.compilers,compile.module.controller.production"
+            description="compile module controller; test classes" unless="skip.tests">
+        <mkdir dir="${controller.testoutput.dir}"/>
+        <javac2 destdir="${controller.testoutput.dir}" debug="${compiler.debug}"
+                nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true"
+                executable="${module.jdk.bin.controller}/javac">
+            <compilerarg line="${compiler.args.controller}"/>
+            <bootclasspath refid="controller.module.bootclasspath"/>
+            <classpath refid="controller.module.classpath"/>
+            <src refid="controller.module.test.sourcepath"/>
+            <patternset refid="excluded.from.compilation.controller"/>
+        </javac2>
+
+        <copy todir="${controller.testoutput.dir}">
+            <fileset dir="${module.controller.basedir}/src/test/java">
+                <patternset refid="compiler.resources"/>
+                <type type="file"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="clean.module.controller" description="cleanup module">
+        <delete dir="${controller.output.dir}"/>
+        <delete dir="${controller.testoutput.dir}"/>
+    </target>
 </project>

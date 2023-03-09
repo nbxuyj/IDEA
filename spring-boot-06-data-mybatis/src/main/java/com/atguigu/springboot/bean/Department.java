@@ -2,7 +2,7 @@ package com.atguigu.springboot.bean;
 
 public class Department {
     private Integer id;
-    private  String departmentName;
+    private String departmentName;
 
     public Integer getId() {
         return id;

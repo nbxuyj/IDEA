@@ -21,9 +21,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public ResponseResult findUserByName2(String name) {
         try {
-            User user= userDao.findByName(name).orElse(null);
+            User user = userDao.findByName(name).orElse(null);
             return ResponseResult.success(user);
-        }catch (Exception e){
+        } catch (Exception e) {
             return ResponseResult.failure(e.getMessage());
         }
 

@@ -12,6 +12,7 @@ import java.sql.SQLException;
 class SpringBoot06DataJdbcApplicationTests {
     @Autowired
     DataSource dataSource;
+
     @Test
     void contextLoads() throws SQLException {
         System.out.println(dataSource.getClass());

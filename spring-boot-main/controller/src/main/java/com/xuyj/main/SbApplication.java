@@ -9,6 +9,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 //@EnableSwagger2
 public class SbApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SbApplication.class,args);
+        SpringApplication.run(SbApplication.class, args);
     }
 }

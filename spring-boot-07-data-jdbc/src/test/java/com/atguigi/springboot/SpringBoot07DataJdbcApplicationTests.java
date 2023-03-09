@@ -13,6 +13,7 @@ class SpringBoot07DataJdbcApplicationTests {
 
     @Autowired
     DataSource dataSource;
+
     @Test
     void contextLoads() throws SQLException {
         System.out.println(dataSource.getClass());

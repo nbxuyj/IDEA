@@ -12,19 +12,19 @@
     <artifactId>service</artifactId>
 
     <dependencies>
-    <!--引入接口模块-->
-    <dependency>
-        <groupId>com.xuyj</groupId>
-        <artifactId>interface</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-    </dependency>
+        <!--引入接口模块-->
+        <dependency>
+            <groupId>com.xuyj</groupId>
+            <artifactId>interface</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 
-    <!--引入数据访问模块-->
-    <dependency>
-        <groupId>com.xuyj</groupId>
-        <artifactId>dao</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-    </dependency>
+        <!--引入数据访问模块-->
+        <dependency>
+            <groupId>com.xuyj</groupId>
+            <artifactId>dao</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>com.xuyj</groupId>
             <artifactId>common</artifactId>

@@ -20,17 +20,17 @@ public class HelloController {
 
 
     @GetMapping("/hello")
-    public  String Hello(){
+    public String Hello() {
 
         return "hello";
     }
 
     //查出一些数据，在
     @RequestMapping("/success")
-    public String success(Map<String,Object> map){
-        map.put("hello","<h1>你好</h1>");
-        map.put("users", Arrays.asList("zhangshan","lisi","wangwu"));
-        return  "success";
+    public String success(Map<String, Object> map) {
+        map.put("hello", "<h1>你好</h1>");
+        map.put("users", Arrays.asList("zhangshan", "lisi", "wangwu"));
+        return "success";
     }
 
 }

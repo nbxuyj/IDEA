@@ -12,14 +12,13 @@ public class User {
     //将属性对应的字段指定为主键。 type表示主键生成的策略。
 
 
-
     //@TableId(value = "uid",type = IdType.AUTO)
     @TableId(value = "uid")
     private Long id;
     @TableField("user_name")
     private String name;
-    private  Integer age;
-    private  String email;
+    private Integer age;
+    private String email;
     private SexEnum sex;
     @TableLogic
     private Integer isDeleted;
@@ -31,7 +30,7 @@ public class User {
         this.email = email;
     }
 
-    public  User(){
+    public User() {
 
     }
 }

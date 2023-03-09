@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Bean;
 @org.springframework.context.annotation.Configuration
 public class MyBatisConfig {
     @Bean
-    public ConfigurationCustomizer configurationCustomizer(){
-     return    new ConfigurationCustomizer(){
+    public ConfigurationCustomizer configurationCustomizer() {
+        return new ConfigurationCustomizer() {
             @Override
             public void customize(Configuration configuration) {
                 configuration.setMapUnderscoreToCamelCase(true);

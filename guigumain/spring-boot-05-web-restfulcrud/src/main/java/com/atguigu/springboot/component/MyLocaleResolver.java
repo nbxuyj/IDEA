@@ -18,9 +18,9 @@ public class MyLocaleResolver implements LocaleResolver {
         //解析区域信息。
         String l = request.getParameter("l");
         Locale locale = Locale.getDefault();
-        if(!StringUtils.isEmpty(l)){
+        if (!StringUtils.isEmpty(l)) {
             String[] split = l.split("_");
-            locale = new Locale(split[0],split[1]);
+            locale = new Locale(split[0], split[1]);
         }
         return locale;
     }

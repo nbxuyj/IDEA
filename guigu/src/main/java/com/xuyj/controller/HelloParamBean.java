@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashMap;
 import java.util.Map;
+
 @Api(value = "HelloParamBean控制器说明", tags = "对象传参示例")
 @Controller
 public class HelloParamBean {
