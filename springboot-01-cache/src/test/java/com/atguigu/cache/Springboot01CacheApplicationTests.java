@@ -16,7 +16,7 @@ class Springboot01CacheApplicationTests {
     @Test
     void contextLoads() {
         Employee emp = employeeMapper.getEmpById(1);
-        System.out.println(emp.getdId());
+        System.out.println(emp.getId());
     }
 
 }
