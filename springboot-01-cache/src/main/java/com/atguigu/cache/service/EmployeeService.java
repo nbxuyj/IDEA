@@ -3,8 +3,11 @@ package com.atguigu.cache.service;
 import com.atguigu.cache.bean.Employee;
 import com.atguigu.cache.mapper.EmployeeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+
+import javax.sound.midi.Soundbank;
 
 @Service
 public class EmployeeService {
@@ -24,7 +27,7 @@ public class EmployeeService {
      *    condition:指定符合条件的情况下缓存。
      *    unless: 否定缓存，条件为true时不缓存。
      *          可以获取到结果进行判断 ##result==null
-     *    async：异步。
+     *    aync：异步下condition条件不生效。
      *
      * 原理：
      *  1.查找CacheAuto
@@ -70,9 +73,27 @@ public class EmployeeService {
      * @return
      */
     //@Cacheable(cacheNames = {"emp"},key="#root.methodName+'['+#id+']'")
-    @Cacheable(cacheNames = {"emp"},keyGenerator = "myKeyGenerator",condition = "#a0>1")
+    //condition = "#a0>1
+    @Cacheable(cacheNames = {"emp"},keyGenerator = "myKeyGenerator")
     public Employee getEmp(Integer id) {
         System.out.println("查询" + id + "号");
         return employeeMapper.getEmpById(id);
     }
+
+
+    /**
+     * @CachePut即调用方法，又更新缓存数据
+     *      * 先调用目标方法，将结果缓存起来。
+     *      测试步骤：
+     *      1.查询1号员工。
+     *      2.再更新员工。
+     */
+
+    @CachePut(value = "emp")
+    public  Employee updateEmp(Employee employee){
+        System.out.println("员工更新。");
+     employeeMapper.updateEmp(employee);
+     return  employee;
+    }
+
 }
