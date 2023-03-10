@@ -26,6 +26,36 @@ public class EmployeeService {
      *          可以获取到结果进行判断 ##result==null
      *    async：异步。
      *
+     * 原理：
+     *  1.查找CacheAuto
+     *      导入@Import({ CacheConfigurationImportSelector.class
+     *  2.缓存的配置类：
+     *  org.springframework.boot.autoconfigure.cache.GenericCacheConfiguration
+     *  org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration
+     *  org.springframework.boot.autoconfigure.cache.EhCacheCacheConfiguration
+     *  org.springframework.boot.autoconfigure.cache.HazelcastCacheConfiguration
+     *  org.springframework.boot.autoconfigure.cache.InfinispanCacheConfiguration
+     *  org.springframework.boot.autoconfigure.cache.CouchbaseCacheConfiguration
+     *  org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration
+     *  org.springframework.boot.autoconfigure.cache.Cache2kCacheConfiguration
+     *  org.springframework.boot.autoconfigure.cache.CaffeineCacheConfiguration
+     *  org.springframework.boot.autoconfigure.cache.SimpleCacheConfiguration
+     *  org.springframework.boot.autoconfigure.cache.NoOpCacheConfiguration
+     * 3. 配置中开启debug=true 控制台会显示报告。
+     *  SimpleCacheConfiguration matched
+     *  注册了一个ConcurrentMapCacheManager
+     *  可以获取或创建ConcurrentMapCache类型的缓存组件，他的作用将数据保存在ConcurrentMap中。
+     *运行流程：
+     *  1.方法运行之前，先去查询cache（缓存组件），按照cachenames指定的名称获取
+     *  2.
+     *
+     *
+     * 核心：
+     *  1）使用cacheManager按照名字得到cacher组件.
+     *  2）key是使用keyGerater生成。
+     *
+     *
+     *
      *
      * @param id
      * @return
