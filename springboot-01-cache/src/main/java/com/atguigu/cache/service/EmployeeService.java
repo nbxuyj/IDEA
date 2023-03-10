@@ -62,13 +62,15 @@ public class EmployeeService {
      * 4.ConcurrentMapCache.put
      *
      * 需求：
-     * key显示 getEmp[2]
+     * 1.key显示 getEmp[2]
+     * 2.使用生成器来生成。
      *
      *
      * @param id
      * @return
      */
-    @Cacheable(cacheNames = {"emp"},key="#root.methodName+'['+#id+']'")
+    //@Cacheable(cacheNames = {"emp"},key="#root.methodName+'['+#id+']'")
+    @Cacheable(cacheNames = {"emp"},key = "myKeyGenerator")
     public Employee getEmp(Integer id) {
         System.out.println("查询" + id + "号");
         return employeeMapper.getEmpById(id);
