@@ -2,10 +2,10 @@ package com.atguigu.cache.mapper;
 
 import com.atguigu.cache.bean.Employee;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 
-
-
+@Repository
 @Mapper
 public interface EmployeeMapper {
     @Select("select * from employee where id=#{id}")
