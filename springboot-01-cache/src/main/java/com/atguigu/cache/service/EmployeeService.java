@@ -54,13 +54,19 @@ public class EmployeeService {
      *  1）使用cacheManager按照名字得到cacher组件.
      *  2）key是使用keyGerater生成。
      *
+     *断点：
+     *
+     * 1. ConcurrentMapCacheManager.getCache
+     * 2. CacheAspectSupport.findCachedItem 中的generateKey
+     * 3. ConcurrentMapCache.lookup
+     * 4.ConcurrentMapCache.put
      *
      *
      *
      * @param id
      * @return
      */
-    @Cacheable(cacheNames = {"emp","temp"})
+    @Cacheable(cacheNames = {"emp"})
     public Employee getEmp(Integer id) {
         System.out.println("查询" + id + "号");
         return employeeMapper.getEmpById(id);
