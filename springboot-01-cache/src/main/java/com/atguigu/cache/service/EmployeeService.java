@@ -61,12 +61,14 @@ public class EmployeeService {
      * 3. ConcurrentMapCache.lookup
      * 4.ConcurrentMapCache.put
      *
+     * 需求：
+     * key显示 getEmp[2]
      *
      *
      * @param id
      * @return
      */
-    @Cacheable(cacheNames = {"emp"})
+    @Cacheable(cacheNames = {"emp"},key="#root.methodName+'['+#id+']'")
     public Employee getEmp(Integer id) {
         System.out.println("查询" + id + "号");
         return employeeMapper.getEmpById(id);
