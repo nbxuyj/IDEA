@@ -74,26 +74,31 @@ public class EmployeeService {
      */
     //@Cacheable(cacheNames = {"emp"},key="#root.methodName+'['+#id+']'")
     //condition = "#a0>1
-    @Cacheable(cacheNames = {"emp"},keyGenerator = "myKeyGenerator")
+    @Cacheable(cacheNames = {"emp"})
     public Employee getEmp(Integer id) {
         System.out.println("查询" + id + "号");
         return employeeMapper.getEmpById(id);
+
     }
 
 
     /**
+
      * @CachePut即调用方法，又更新缓存数据
      *      * 先调用目标方法，将结果缓存起来。
      *      测试步骤：
      *      1.查询1号员工。
      *      2.再更新员工。
+     *
+     *      key:#employee.id
+     *          还可以。
      */
 
-    @CachePut(value = "emp")
+    @CachePut(value = "emp",key="#result.id" )
     public  Employee updateEmp(Employee employee){
         System.out.println("员工更新。");
-     employeeMapper.updateEmp(employee);
-     return  employee;
+        employeeMapper.updateEmp(employee);
+        return  employee;
     }
 
 }
