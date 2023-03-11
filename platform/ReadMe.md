@@ -7,3 +7,6 @@
 4.		api	        com.xuyj.platform.manage.api    platform-manage-api
 
 
+1. [dependencyManagement使用参考](https://www.jianshu.com/p/1870fe75386a)
+2. [Maven 继承父工程时的relativePath标签解析](https://blog.csdn.net/inthat/article/details/108147303)
+
