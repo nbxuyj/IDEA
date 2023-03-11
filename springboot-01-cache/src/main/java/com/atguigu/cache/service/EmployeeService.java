@@ -101,7 +101,14 @@ public class EmployeeService {
         employeeMapper.updateEmp(employee);
         return  employee;
     }
-    @CacheEvict(value = "emp",key = "#id")
+
+    /**
+     * allEntri
+     * @param id
+     *
+     * key = "#id"
+     */
+    @CacheEvict(value = "emp",allEntries = true)
 
      public  void deleteEmp(Integer id){
          System.out.println("deleteEmp:"+id);
