@@ -10,3 +10,4 @@
 1. [dependencyManagement使用参考](https://www.jianshu.com/p/1870fe75386a)
 2. [Maven 继承父工程时的relativePath标签解析](https://blog.csdn.net/inthat/article/details/108147303)
 
+3.artifactId：artifactId一般是项目名或者模块名。
