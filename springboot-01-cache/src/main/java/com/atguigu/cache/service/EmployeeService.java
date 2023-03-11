@@ -3,6 +3,7 @@ package com.atguigu.cache.service;
 import com.atguigu.cache.bean.Employee;
 import com.atguigu.cache.mapper.EmployeeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -100,5 +101,10 @@ public class EmployeeService {
         employeeMapper.updateEmp(employee);
         return  employee;
     }
+    @CacheEvict(value = "emp",key = "#id")
+
+     public  void deleteEmp(Integer id){
+         System.out.println("deleteEmp:"+id);
+     }
 
 }
