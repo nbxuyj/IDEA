@@ -107,11 +107,13 @@ public class EmployeeService {
      * @param id
      *
      * key = "#id"
+     * beforeInvocation 表示在方法执行之前清理缓存。
      */
-    @CacheEvict(value = "emp",allEntries = true)
+    @CacheEvict(value = "emp",allEntries = true,beforeInvocation = true)
 
      public  void deleteEmp(Integer id){
          System.out.println("deleteEmp:"+id);
+         Integer a=10/0;
      }
 
 }
