@@ -7,6 +7,14 @@
         <groupId>com.xuyj.platform</groupId>
         <version>0.0.1</version>
     </parent>
+    <dependencies>
+        <dependency>
+            <groupId>com.xuyj.platform</groupId>
+            <artifactId>db</artifactId>
+            <version>0.0.1</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>server</artifactId>
