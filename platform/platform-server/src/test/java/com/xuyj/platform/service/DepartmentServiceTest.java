@@ -15,7 +15,7 @@ class DepartmentServiceTest {
     @Resource
     EmployeeService employeeService;
     @Test
-    public  void Test1(){
+    public  void serverTest1(){
         Employee byId = employeeService.getById(1);
         System.out.printf("byid"+byId.getLastname());
     }
