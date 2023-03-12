@@ -1,6 +1,7 @@
-package com.xuyj.platform.db.mapper;
+package com.xuyj.platform.db.testmapper;
 
 import com.xuyj.platform.db.entity.Employee;
+import com.xuyj.platform.db.mapper.EmployeeMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
