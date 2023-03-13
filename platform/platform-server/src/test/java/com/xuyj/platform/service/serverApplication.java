@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @MapperScan(value = "com.xuyj.platform.db.mapper")
-@ComponentScan("com.xuyj.platform.service")
+@ComponentScan( value = {"com.xuyj.platform.service","com.xuyj.platform"})
 public class serverApplication {
     public static void main(String[] args) {
         SpringApplication.run(serverApplication.class,args);
