@@ -23,6 +23,11 @@
             <groupId>com.xuyj.platform</groupId>
             <artifactId>common</artifactId>
         </dependency>
+        <!--模块-引用DB层-->
+        <dependency>
+            <groupId>com.xuyj.platform</groupId>
+            <artifactId>db</artifactId>
+        </dependency>
         <!--通用层-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -33,6 +38,16 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>swagger-bootstrap-ui</artifactId>
         </dependency>
 
 

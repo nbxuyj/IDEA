@@ -1,8 +1,19 @@
-package com.xuyj.plateform.common.config;
+package com.xuyj.platform.manage.api.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.oas.annotations.EnableOpenApi;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+
 
 @EnableOpenApi
 @Configuration
-
 public class SwaggerConfig {
     /**
      * 创建API应用
@@ -21,7 +32,7 @@ public class SwaggerConfig {
                 .forCodeGeneration(false)
                 .select()
                 //扫描哪个包
-                .apis(RequestHandlerSelectors.basePackage("com.easy.lybc.manage.api.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.xuyj.platform.manage.api.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
@@ -34,7 +45,7 @@ public class SwaggerConfig {
      */
     private ApiInfo apiInfo(String title, String version) {
         return new ApiInfoBuilder()
-                .title("旅游包车Java版")
+                .title("平台Java版")
                 .description("更多请关注")
                 .termsOfServiceUrl("")
                 .contact(new Contact("", "", ""))

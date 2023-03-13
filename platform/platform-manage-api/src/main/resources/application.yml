@@ -1,7 +1,9 @@
 spring:
+  mvc:
+    path match:
+      matching-strategy: ant_path_matcher
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 123456
     url: jdbc:mysql://192.168.159.145:3306/mybatis2?serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
-
