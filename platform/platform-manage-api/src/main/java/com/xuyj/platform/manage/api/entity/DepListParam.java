@@ -1,9 +1,13 @@
 package com.xuyj.platform.manage.api.entity;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
-@Data
-public class DepListParam extends PageRequest {
+import java.io.Serializable;
 
-    private  String depName;
+@Data
+public class DepListParam extends PageRequest implements Serializable {
+    @ApiModelProperty("部门名称")
+    private String depName;
 }
