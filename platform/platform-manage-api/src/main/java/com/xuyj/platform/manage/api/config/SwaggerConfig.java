@@ -39,7 +39,7 @@ public class SwaggerConfig {
 
     /**
      * 创建该API的基本信息（这些基本信息会展现在文档页面中）
-     * 访问地址：//访问地址http://localhost:9092/swagger-ui/index.html
+     * 访问地址：//访问地址http://localhost:9091/swagger-ui/index.html
      *
      * @return
      */
