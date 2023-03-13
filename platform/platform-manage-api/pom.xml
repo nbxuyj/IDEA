@@ -11,5 +11,26 @@
 
     <artifactId>manage-api</artifactId>
 
+    <dependencies>
+
+        <!--引用Server层-->
+        <dependency>
+            <groupId>com.xuyj.platform</groupId>
+            <artifactId>server</artifactId>
+        </dependency>
+        <!--通用层-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <!--引用Web层-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+
+    </dependencies>
 
 </project>
