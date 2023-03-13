@@ -1,0 +1,45 @@
+package com.xuyj.plateform.common.config;
+
+@EnableOpenApi
+@Configuration
+
+public class SwaggerConfig {
+    /**
+     * 创建API应用
+     * apiInfo() 增加API相关信息
+     * 通过select()函数返回一个ApiSelectorBuilder实例,用来控制哪些接口暴露给Swagger来展现，
+     * 本例采用指定扫描的包路径来定义指定要建立API的目录。
+     *
+     * @return
+     */
+    @Bean
+    public Docket restApi() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("标准接口")
+                .apiInfo(apiInfo("Spring Boot中使用Swagger2构建RESTful APIs", "1.0"))
+                .useDefaultResponseMessages(true)
+                .forCodeGeneration(false)
+                .select()
+                //扫描哪个包
+                .apis(RequestHandlerSelectors.basePackage("com.easy.lybc.manage.api.controller"))
+                .paths(PathSelectors.any())
+                .build();
+    }
+
+    /**
+     * 创建该API的基本信息（这些基本信息会展现在文档页面中）
+     * 访问地址：//访问地址http://localhost:9092/swagger-ui/index.html
+     *
+     * @return
+     */
+    private ApiInfo apiInfo(String title, String version) {
+        return new ApiInfoBuilder()
+                .title("旅游包车Java版")
+                .description("更多请关注")
+                .termsOfServiceUrl("")
+                .contact(new Contact("", "", ""))
+                .version(version)
+                .build();
+    }
+}
+
