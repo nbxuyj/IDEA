@@ -13,10 +13,15 @@
 
     <dependencies>
 
-        <!--引用Server层-->
+        <!--模块-引用Server层-->
         <dependency>
             <groupId>com.xuyj.platform</groupId>
             <artifactId>server</artifactId>
+        </dependency>
+        <!--模块-引用Common层-->
+        <dependency>
+            <groupId>com.xuyj.platform</groupId>
+            <artifactId>common</artifactId>
         </dependency>
         <!--通用层-->
         <dependency>

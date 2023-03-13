@@ -8,13 +8,16 @@
         <version>0.0.1</version>
     </parent>
     <dependencies>
+        <!--模块-引用DB层-->
         <dependency>
             <groupId>com.xuyj.platform</groupId>
             <artifactId>db</artifactId>
-            <version>0.0.1</version>
-            <scope>compile</scope>
         </dependency>
-
+        <!--模块-引用Common层-->
+        <dependency>
+            <groupId>com.xuyj.platform</groupId>
+            <artifactId>common</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>com.baomidou</groupId>
