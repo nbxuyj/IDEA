@@ -1,4 +1,4 @@
-package com.xuyj.platform.manage.api.config;
+package com.xuyj.plateform.common.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
