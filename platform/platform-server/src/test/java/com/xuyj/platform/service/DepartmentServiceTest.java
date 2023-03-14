@@ -2,6 +2,7 @@ package com.xuyj.platform.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xuyj.platform.db.entity.Department;
+import com.xuyj.platform.service.entity.DepartmentListParam;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -26,10 +27,13 @@ class DepartmentServiceTest {
 
     @Test
     void selectAll() {
-        Page<Department> page=new Page<>(1,10);
-        Department dep=new Department();
-        dep.setDepartmentname("9");
-        Page<Department> page1 = departmentService.mySelectAll(page, dep);
+
+        DepartmentListParam param=new DepartmentListParam();
+        param.setName("9");
+        param.setPageSize(10);
+        param.setPageNumber(1);
+
+        Page<Department> page1 = departmentService.mySelectAll(param);
         Integer i=10;
     }
 }

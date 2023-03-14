@@ -32,7 +32,7 @@ public class SwaggerConfig {
                 .forCodeGeneration(false)
                 .select()
                 //扫描哪个包
-                .apis(RequestHandlerSelectors.basePackage("com.xuyj.platform.manage.api.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.xuyj.platform"))
                 .paths(PathSelectors.any())
                 .build();
     }

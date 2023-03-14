@@ -3,6 +3,8 @@ package com.xuyj.platform.service;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xuyj.platform.db.entity.Department;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.xuyj.platform.service.entity.DepartmentListParam;
+import com.xuyj.platform.service.entity.PageResult;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,5 +14,5 @@ import org.springframework.stereotype.Service;
 */
 @Service
 public interface DepartmentService extends IService<Department> {
-    Page<Department> mySelectAll( Page<Department> page,Department dep);
+    PageResult<Department> mySelectAll(DepartmentListParam p);
 }

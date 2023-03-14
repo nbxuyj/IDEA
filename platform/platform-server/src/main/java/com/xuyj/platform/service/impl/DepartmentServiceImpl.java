@@ -7,6 +7,8 @@ import com.mysql.cj.util.StringUtils;
 import com.xuyj.platform.db.entity.Department;
 import com.xuyj.platform.db.mapper.DepartmentMapper;
 import com.xuyj.platform.service.DepartmentService;
+import com.xuyj.platform.service.entity.DepartmentListParam;
+import com.xuyj.platform.service.entity.PageResult;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,14 +19,17 @@ import org.springframework.stereotype.Service;
 @Service
 public class DepartmentServiceImpl extends ServiceImpl<DepartmentMapper, Department>
     implements DepartmentService {
-   public Page<Department> mySelectAll(Page<Department> page, Department dep){
-       String depName="";
-       if (dep!=null && !StringUtils.isNullOrEmpty(dep.getDepartmentname())){
-           depName=dep.getDepartmentname();
-       }
-       LambdaQueryWrapper<Department> mp=new LambdaQueryWrapper<>();
-       mp.like(!StringUtils.isNullOrEmpty(depName),Department::getDepartmentname,depName);
-      return this.getBaseMapper().selectPage(page,mp);
+   public PageResult<Department> mySelectAll(DepartmentListParam param){
+       //1.采用LambdaQueryWrapper构建查询条件。
+       LambdaQueryWrapper<Department> mp = new LambdaQueryWrapper<>();
+       //按客户名称、客户电话模糊查询
+       mp.like(param != null && !StringUtils.isNullOrEmpty(param.getName()), Department::getDepartmentname, param.getName());
+
+
+       //构建分页查询条件。
+       PageResult<Department> page = new PageResult<>(param.getPageNumber(), param.getPageSize());
+       return this.getBaseMapper().selectPage(page, mp);
+
 
    }
 }
