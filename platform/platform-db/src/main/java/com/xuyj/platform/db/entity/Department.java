@@ -1,27 +1,30 @@
 package com.xuyj.platform.db.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
-
-import io.swagger.annotations.ApiModelProperty;
-import io.swagger.annotations.ApiOperation;
 import lombok.Data;
 
 /**
+ * 
  * @TableName department
  */
+@TableName(value ="department")
 @Data
 public class Department implements Serializable {
     /**
-     *
+     * 
      */
-    @ApiModelProperty("部门ID")
+    @TableId(type = IdType.AUTO)
     private Integer id;
 
     /**
-     *
+     * 
      */
-    @ApiModelProperty("部门名称")
     private String departmentname;
 
+    @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 }

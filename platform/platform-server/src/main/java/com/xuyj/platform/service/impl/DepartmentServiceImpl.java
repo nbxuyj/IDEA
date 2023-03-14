@@ -19,11 +19,11 @@ public class DepartmentServiceImpl extends ServiceImpl<DepartmentMapper, Departm
     implements DepartmentService {
    public Page<Department> mySelectAll(Page<Department> page, Department dep){
        String depName="";
-       if (dep!=null && StringUtils.isNullOrEmpty(dep.getDepartmentname())){
+       if (dep!=null && !StringUtils.isNullOrEmpty(dep.getDepartmentname())){
            depName=dep.getDepartmentname();
        }
        LambdaQueryWrapper<Department> mp=new LambdaQueryWrapper<>();
-       mp.like(StringUtils.isNullOrEmpty(depName),Department::getDepartmentname,depName);
+       mp.like(!StringUtils.isNullOrEmpty(depName),Department::getDepartmentname,depName);
       return this.getBaseMapper().selectPage(page,mp);
 
    }
