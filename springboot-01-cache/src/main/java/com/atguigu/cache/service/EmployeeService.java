@@ -3,14 +3,12 @@ package com.atguigu.cache.service;
 import com.atguigu.cache.bean.Employee;
 import com.atguigu.cache.mapper.EmployeeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.CachePut;
-import org.springframework.cache.annotation.Cacheable;
-import org.springframework.cache.annotation.Caching;
+import org.springframework.cache.annotation.*;
 import org.springframework.stereotype.Service;
 
 import javax.sound.midi.Soundbank;
-
+//此处写了cacheNames则方法前的value不需要再写
+@CacheConfig(cacheNames="emp") //抽取缓存的公共配置
 @Service
 public class EmployeeService {
     @Autowired
@@ -75,7 +73,8 @@ public class EmployeeService {
      */
     //@Cacheable(cacheNames = {"emp"},key="#root.methodName+'['+#id+']'")
     //condition = "#a0>1
-    @Cacheable(cacheNames = {"emp"})
+//    @Cacheable(cacheNames = {"emp"})
+    @Cacheable()
     public Employee getEmp(Integer id) {
         System.out.println("查询" + id + "号");
         return employeeMapper.getEmpById(id);
@@ -113,6 +112,7 @@ public class EmployeeService {
         Integer a = 10 / 0;
     }
 
+    //@Caching 定义复杂的缓存规则，给类上增加@CacheConfig()
     @Caching(
             cacheable = {
                     @Cacheable(value = "emp", key = "#lastName")
