@@ -1,4 +1,4 @@
-package com.xuyj.plateform.common.entity;
+package com.xuyj.platform.common.entity;
 
 import lombok.Data;
 

@@ -1,7 +1,6 @@
 package com.xuyj.platform.manage.api.controller;
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.xuyj.plateform.common.entity.ResultMessage;
+import com.xuyj.platform.common.entity.ResultMessage;
 import com.xuyj.platform.db.entity.Department;
 import com.xuyj.platform.service.DepartmentService;
 import com.xuyj.platform.service.entity.DepartmentListParam;
@@ -9,7 +8,6 @@ import com.xuyj.platform.service.entity.PageResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
