@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.159.145:3306/spring_cache?serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
+    #type: com.zaxxer.hikari.util.DriverDataSource
+    # type: com.mysql.cj.jdbc.MysqlDataSource
+
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 开启驼峰命名规则。
+    map-underscore-to-camel-case: true
+#debug: true

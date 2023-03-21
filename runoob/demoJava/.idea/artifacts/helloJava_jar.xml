@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="helloJava:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/helloJava_jar</output-path>
+    <root id="archive" name="helloJava.jar">
+      <element id="module-output" name="helloJava" />
+    </root>
+  </artifact>
+</component>

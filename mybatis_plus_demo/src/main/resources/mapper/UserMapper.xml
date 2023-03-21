@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.atguigu.mybatis.mapper.UserMapper">
+
+    <!--    Map<String,Object> selectMapByID(Long id);-->
+    <select id="selectMapByID" resultType="map">
+        select uid,user_name,age,email from t_user where uid=#{id}
+    </select>
+
+    <!--    Page<User>selectPageVo(@Param("page") Page<User>page,@Param("age") Integer age);-->
+    <!--    resultType 填写的是类型别名(默认的别名就是类名，且不区分大小写，在yml中配置所在位置)-->
+    <select id="selectPageVo" resultType="User">
+        select uid,user_name,age,email from t_user where age>#{age}
+    </select>
+
+
+    <!--    <resultMap id="MedicateExceptResult" type="MedicateExcept">-->
+    <!--        <result property="time" column="time"></result>-->
+    <!--        <result property="medicateLevel" column="medicate_level"/>-->
+    <!--    </resultMap>-->
+
+
+    <!--    <select id="selectMedicateExceptSolveList" parameterType="MedicateExceptSolve"-->
+    <!--            resultMap="MedicateExceptSolveResult">-->
+    <!--        select * from medicate_except_solve-->
+    <!--        <where>-->
+    <!--            <if test="params.beginTime != null and params.beginTime != '' and params.endTime != null and params.endTime != ''">-->
+    <!--                and time between #{params.beginTime} and #{params.endTime}-->
+    <!--            </if>-->
+    <!--        </where>-->
+    <!--    </select>-->
+
+    <!--    <insert id="insertMedicateExceptSolve" parameterType="MedicateExceptSolve">-->
+    <!--        insert into medicate_except_solve values (#{time},#{solve})-->
+    <!--    </insert>-->
+
+    <!--    &lt;!&ndash;-->
+    <!--select标签表示的是查询操作，里面是查询语句。-->
+    <!--id属性的值是SQL语句的唯一标识，是一个自定义的字符串。-->
+    <!--按照编码规范，这里统一推荐使用dao接口中对应的方法名称。-->
+    <!--resultType属性是表示执行SQL语句后，结果对应那个类型的JAVA对象。resultType的值是某个实体类的全限定名称。-->
+    <!--比如：com.dcy.domain.Student-->
+    <!--&ndash;&gt;-->
+    <!--    <select id="selectStudentById" resultType="com.dcy.domain.Student">-->
+    <!--        select id,name,email,age from student where id=#{studentId}-->
+    <!--    </select>-->
+    <!--    &lt;!&ndash;    下面的语句使用了占位符，因为我们传过来的是一个java对象，可以直接使用它的属性名，放在花括号里面，-->
+    <!--前面配上#，这就相当于是传参了&ndash;&gt;-->
+    <!--    <insert id="insertStudent">-->
+    <!--        insert into student values (#{id},#{name},#{email},#{age})-->
+    <!--    </insert>-->
+    <!--    <update id="updateUser" parameterType="User">-->
+    <!--        update sys_user-->
+    <!--        <set>-->
+    <!--            <if test="deptId != null and deptId != 0">dept_id = #{deptId},</if>-->
+    <!--            <if test="remark != null">remark = #{remark},</if>-->
+    <!--            update_time = sysdate()-->
+    <!--        </set>-->
+    <!--        where user_id = #{userId}-->
+    <!--    </update>-->
+    <!--    <select id="selectDeptCount" parameterType="Dept" resultType="int">-->
+    <!--        select count(1) from sys_dept-->
+    <!--        where del_flag = '0'-->
+    <!--        <if test="parentId != null and parentId != 0">and parent_id = #{parentId}</if>-->
+    <!--    </select>-->
+    <!--    <delete id="deleteUserRole" parameterType="Long">-->
+    <!--        delete from sys_user_role where user_id in-->
+    <!--        <foreach collection="array" item="userId" open="(" separator="," close=")">-->
+    <!--            #{userId}-->
+    <!--        </foreach>-->
+    <!--    </delete>-->
+</mapper>
