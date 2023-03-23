@@ -24,7 +24,7 @@ public class Department implements Serializable {
      * 
      */
     private String departmentname;
-
+    private String tel;
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 }

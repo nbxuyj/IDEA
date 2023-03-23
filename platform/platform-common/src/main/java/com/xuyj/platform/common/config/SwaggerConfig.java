@@ -1,5 +1,6 @@
 package com.xuyj.platform.common.config;
 
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -14,6 +15,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 
 @EnableOpenApi
 @Configuration
+@EnableCaching
 public class SwaggerConfig {
     /**
      * 创建API应用

@@ -2,11 +2,15 @@ package com.atguigu.mybatis;
 
 import com.atguigu.mybatis.pojo.User;
 import com.atguigu.mybatis.service.UserService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @SpringBootTest
 public class MyBatisPlusServiceTest {
@@ -32,6 +36,21 @@ public class MyBatisPlusServiceTest {
             users.add(user);
         }
         userService.saveBatch(users);
+    }
+    @Test
+    public  void testQuery(){
+       // List<Map<String, Object>> maps = userService.listMaps(new QueryWrapper<>());
+
+        Map<Long, Object> mapCompany = userService.list().stream().collect(Collectors.toMap(User::getId, k->k));
+
+
+        userService.list().stream()
+                .collect(Collectors.toMap(User::getId, User::getName))
+
+        int i=10;
+//        Map<String, Object> maps = userService.getMap(null);
+//        System.out.println(maps.containsKey(1));
+       // maps.forEach(System.out::printf);
     }
 
 

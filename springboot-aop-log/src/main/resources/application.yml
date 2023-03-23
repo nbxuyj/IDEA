@@ -1,0 +1,30 @@
+server:
+  servlet:
+    context-path: /xuyj
+    encoding:
+      charset: utf-8
+      force: true
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.159.145:3306/mybatis_plus?serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
+    #type: com.zaxxer.hikari.util.DriverDataSource
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: com.atguigu.mybatis.pojo
+  # \u626B\u63CF\u901A\u7528\u679A\u4E3E\u5305\u3002
+  type-enums-package: com.atguigu.mybatis.enums
+
+# \u5F15\u7528\u53D8\u91CF\uFF1A
+#date: 2023.03.21
+
+todo:
+  date: "2023年03月23日"
+  thing: 今天是${todo.date},你好呀

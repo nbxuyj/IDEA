@@ -8,6 +8,8 @@ import com.xuyj.platform.service.entity.PageResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -15,6 +17,7 @@ import javax.annotation.Resource;
 @RestController
 @RequestMapping("/dep")
 @Api("部门类")
+
 public class DepartmentController {
     @Resource
     DepartmentService departmentService;
@@ -29,4 +32,9 @@ public class DepartmentController {
     }
 
 
+    @GetMapping("/{id}")
+    public Department getDep(@PathVariable("id") Integer id){
+     return  departmentService.getDep(id);
+
+    }
 }

@@ -3,6 +3,8 @@ package com.xuyj.platform.service.entity;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.util.List;
+
 @JsonIgnoreProperties(value = {"optimizeCountSql", "searchCount",
         "maxLimit", "countId", "orders", "pages"})
 public class PageResult<T> extends Page<T> {
@@ -26,4 +28,6 @@ public class PageResult<T> extends Page<T> {
     public PageResult(long current, long size, long total, boolean searchCount) {
         super(current, size, total, searchCount);
     }
+
+
 }

@@ -8,5 +8,6 @@ import java.io.Serializable;
 public class DepartmentListParam extends PageBaseParam implements Serializable {
     @ApiModelProperty("部门名称")
     String Name;
-
+    @ApiModelProperty("电话")
+    String Tel;
 }

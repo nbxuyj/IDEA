@@ -5,11 +5,13 @@
 <mapper namespace="com.xuyj.platform.db.mapper.DepartmentMapper">
 
     <resultMap id="BaseResultMap" type="com.xuyj.platform.db.entity.Department">
-            <id property="id" column="id" jdbcType="INTEGER"/>
-            <result property="departmentname" column="departmentName" jdbcType="VARCHAR"/>
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="departmentname" column="departmentName" jdbcType="VARCHAR"/>
+        <result property="tel" column="tel" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,departmentName
+        id
+        ,departmentName,tel
     </sql>
 </mapper>

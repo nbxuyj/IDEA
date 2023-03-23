@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "todo",
+      "type": "com.xuyj.springboot.config.TodoConfig",
+      "sourceType": "com.xuyj.springboot.config.TodoConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "todo.date",
+      "type": "java.lang.String",
+      "sourceType": "com.xuyj.springboot.config.TodoConfig"
+    },
+    {
+      "name": "todo.thing",
+      "type": "java.lang.String",
+      "sourceType": "com.xuyj.springboot.config.TodoConfig"
+    }
+  ],
+  "hints": []
+}

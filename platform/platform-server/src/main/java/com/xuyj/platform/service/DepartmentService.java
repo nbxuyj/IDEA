@@ -15,4 +15,5 @@ import org.springframework.stereotype.Service;
 @Service
 public interface DepartmentService extends IService<Department> {
     PageResult<Department> mySelectAll(DepartmentListParam p);
+    Department getDep(Integer id);
 }
