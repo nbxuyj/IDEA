@@ -12,6 +12,7 @@
 
     <sql id="Base_Column_List">
         id
-        ,departmentName,tel
+        ,departmentName
+        ,tel
     </sql>
 </mapper>

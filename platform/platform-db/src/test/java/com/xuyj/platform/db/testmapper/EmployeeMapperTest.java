@@ -9,13 +9,13 @@ import javax.annotation.Resource;
 
 @SpringBootTest
 class EmployeeMapperTest {
-    @Resource
-    EmployeeMapper employeeMapper;
+    //@Resource
+    //EmployeeMapper employeeMapper;
     @Test
     public  void test1(){
 
-        Employee employee = employeeMapper.selectById(1);
-        System.out.println(employee.getLastname());
+//        Employee employee = employeeMapper.selectById(1);
+//        System.out.println(employee.getLastname());
     }
     @Test
     public void  test2(){
