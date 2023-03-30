@@ -28,5 +28,17 @@ public class HelloController {
         return "index";
     }
 
+    @GetMapping("/say")
+    public String say3(@RequestParam("id") String id){
+        return "RequestParam学生的ID是："+id;
+    }
+    @GetMapping("/say/{id}")
+    public String say4(@PathVariable("id") String id){
+        return "PathVariable:学生的ID是："+id;
+    }
 
+    @GetMapping("/say5")
+    public String say5(@RequestParam( value = "id",required = false,defaultValue = "888") String id){
+        return "RequestParam:学生的ID是："+id;
+    }
 }
