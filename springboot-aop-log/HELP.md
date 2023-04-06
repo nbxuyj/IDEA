@@ -35,3 +35,13 @@ jpa:show-sql: true hibernate:ddl-auto: create
 <groupId>org.springframework.boot</groupId>
 <artifactId>spring-boot-configuration-processor</artifactId>
 </dependency>
+
+## 2023.04.06
+ddl-auto
+ddl-auto：create ----每次运行该程序，没有表格会新建表格，表内有数据会清空；
+ddl-auto：create-drop ----每次程序结束的时候会清空表
+ddl-auto：update ---- 每次运行程序，没有表格会新建表格，表内有数据不会清空，只会更新
+ddl-auto： validate ---- 运行程序会校验数据与数据库的字段类型是否相同，不同会报错。
+
+2. 乱码问题：
+1）数据库连接串增加characterEncoding=utf-8

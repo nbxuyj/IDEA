@@ -1,12 +1,14 @@
 package com.xuyj.springboot.controller;
 
 import com.xuyj.springboot.config.TodoConfig;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 //@RestController
+@Api(tags = "A测试接口")
 @Controller
 @ResponseBody
 public class HelloController {
@@ -23,7 +25,7 @@ public class HelloController {
     public String say2(){
         return "redirect:http://www.baidu.com";
     }
-    @RequestMapping({"/welcome","/hi"})
+    @RequestMapping(value={"/welcome","/hi"},method = RequestMethod.GET)
     public String welcome(){
         return "index";
     }
