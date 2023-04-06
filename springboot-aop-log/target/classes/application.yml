@@ -4,8 +4,10 @@ server:
     encoding:
       charset: utf-8
       force: true
-
 spring:
+  mvc:
+    path match:
+      matching-strategy: ant_path_matcher
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root

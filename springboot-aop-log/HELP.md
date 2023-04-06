@@ -5,6 +5,11 @@ SpringBoot注解。 https://www.515code.com/posts/ub6uo96o/
 
 https://www.bilibili.com/video/BV1KT4y1G7hs/?spm_id_from=333.337.search-card.all.click&vd_source=b563cc715acc24e9b3dc95a3745e6771
 
+
+测试地址：
+http://localhost:8080/xuyj/student
+
+
 1.Controller 与RestController 区别。
 2.RequestMapping中的value传参可以加｛｝传递多个。
 3.增加server.servlet.context-path: /xuyj 配置项目路径。
@@ -22,3 +27,11 @@ https://www.bilibili.com/video/BV1KT4y1G7hs/?spm_id_from=333.337.search-card.all
 1.添加连接驱动。
 2.配置自动生成表。
 jpa:show-sql: true hibernate:ddl-auto: create
+
+## 2023.04.03
+配置文件：
+需要添加引用
+<dependency>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-configuration-processor</artifactId>
+</dependency>
