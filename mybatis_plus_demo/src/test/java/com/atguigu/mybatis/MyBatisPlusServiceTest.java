@@ -45,7 +45,7 @@ public class MyBatisPlusServiceTest {
 
 
         userService.list().stream()
-                .collect(Collectors.toMap(User::getId, User::getName))
+                .collect(Collectors.toMap(User::getId, User::getName));
 
         int i=10;
 //        Map<String, Object> maps = userService.getMap(null);

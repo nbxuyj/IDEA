@@ -7,6 +7,8 @@ import com.xuyj.platform.service.entity.DepartmentListParam;
 import com.xuyj.platform.service.entity.PageResult;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
 * @author openx
 * @description 针对表【department】的数据库操作Service
@@ -14,6 +16,7 @@ import org.springframework.stereotype.Service;
 */
 @Service
 public interface DepartmentService extends IService<Department> {
-    PageResult<Department> mySelectAll(DepartmentListParam p);
-    Department getDep(Integer id);
+//    PageResult<Department> mySelectAll(DepartmentListParam p);
+//    Department getDep(Integer id);
+List<Department> GetCacheAll();
 }

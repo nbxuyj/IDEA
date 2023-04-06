@@ -2,6 +2,9 @@ package com.xuyj.platform.db.mapper;
 
 import com.xuyj.platform.db.entity.Department;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.springframework.cache.annotation.Cacheable;
+
+import java.util.List;
 
 /**
 * @author openx

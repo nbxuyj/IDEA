@@ -2,6 +2,7 @@ package com.xuyj.platform.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xuyj.platform.db.entity.Department;
+import com.xuyj.platform.service.cache.DepartmentServiceCache;
 import com.xuyj.platform.service.entity.DepartmentListParam;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,6 +15,9 @@ import java.util.ArrayList;
 class DepartmentServiceTest {
     @Resource
     DepartmentService departmentService;
+
+    @Resource
+    DepartmentServiceCache cache;
     @Test
     void batchInsert() {
         ArrayList<Department> deps = new ArrayList<>();
@@ -33,7 +37,7 @@ class DepartmentServiceTest {
         param.setPageSize(10);
         param.setPageNumber(1);
 
-        Page<Department> page1 = departmentService.mySelectAll(param);
+        Page<Department> page1 = cache.mySelectAll(param);
         Integer i=10;
     }
 }

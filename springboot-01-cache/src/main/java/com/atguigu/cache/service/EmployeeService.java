@@ -71,10 +71,12 @@ public class EmployeeService {
      * @param id
      * @return
      */
-    //@Cacheable(cacheNames = {"emp"},key="#root.methodName+'['+#id+']'")
+    //@Cacheable(cacheNames = {"emp"},key="#root.methodNa
+
+
     //condition = "#a0>1
-//    @Cacheable(cacheNames = {"emp"})
-    @Cacheable()
+ @Cacheable(cacheNames = {"emp"},keyGenerator = "myKeyGenerator")
+    //@Cacheable()
     public Employee getEmp(Integer id) {
         System.out.println("查询" + id + "号");
         return employeeMapper.getEmpById(id);
