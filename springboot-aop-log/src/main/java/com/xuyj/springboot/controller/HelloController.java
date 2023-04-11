@@ -1,11 +1,15 @@
 package com.xuyj.springboot.controller;
 
 import com.xuyj.springboot.config.TodoConfig;
+import com.xuyj.springboot.entity.SysLogEntity;
 import io.swagger.annotations.Api;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+
 
 //@RestController
 @Api(tags = "A测试接口")
@@ -43,4 +47,7 @@ public class HelloController {
     public String say5(@RequestParam( value = "id",required = false,defaultValue = "888") String id){
         return "RequestParam:学生的ID是："+id;
     }
+
+
+
 }

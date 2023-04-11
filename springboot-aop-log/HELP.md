@@ -8,6 +8,7 @@ https://www.bilibili.com/video/BV1KT4y1G7hs/?spm_id_from=333.337.search-card.all
 
 测试地址：
 http://localhost:8080/xuyj/student
+http://localhost:8080/xuyj/doc.html
 
 
 1.Controller 与RestController 区别。
@@ -45,3 +46,4 @@ ddl-auto： validate ---- 运行程序会校验数据与数据库的字段类型
 
 2. 乱码问题：
 1）数据库连接串增加characterEncoding=utf-8
+## 2023.04.07
