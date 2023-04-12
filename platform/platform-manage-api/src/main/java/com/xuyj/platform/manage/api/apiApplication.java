@@ -11,7 +11,10 @@ import springfox.documentation.oas.annotations.EnableOpenApi;
 @EnableOpenApi
 @SpringBootApplication
 @MapperScan("com.xuyj.platform.db.mapper")
-@ComponentScan( value = {"com.xuyj.platform","com.xuyj.platform.service"})
+@ComponentScan( value = {"com.xuyj.platform",
+        "com.xuyj.platform.service",
+        "com.xuyj.platform.common.*",
+})
 public class apiApplication {
     public static void main(String[] args) {
         SpringApplication.run(apiApplication.class, args);

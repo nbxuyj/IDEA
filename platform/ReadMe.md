@@ -1,4 +1,10 @@
 # 创建多模块子父工程示例 
+
+运行示例：
+
+规范文档参考：
+F:\M01文档\02.公共\06.问题库\36.IDEA旅游包车\包车Java版本开发设计说明书-规范2023.03.06.docx
+
 ## 2023.03.11
 
 1.		common模块	com.xuyj.platform.common	    platform-common
