@@ -1,19 +1,18 @@
-package com.xuyj.springboot.config;
+package com.xuyj.platform.aspect;
 
-import com.xuyj.springboot.entity.SysLogEntity;
-import com.xuyj.springboot.service.SysLogService;
-import lombok.var;
+
+import com.xuyj.platform.db.entity.SysLogEntity;
+import com.xuyj.platform.service.SysLogEntityService;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
-import org.springframework.util.StringUtils;
+
 
 import javax.annotation.Resource;
 import java.lang.reflect.Method;
-import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -26,19 +25,9 @@ import java.util.List;
 @Component
 public class LogDBAspect {
     @Resource
-    SysLogService sysLogService;
-
-    /**
-     * 这里我们使用注解的形式
-     * 当然，我们也可以通过切点表达式直接指定需要拦截的package,需要拦截的class 以及 method
-     * 切点表达式:   execution(...)
-     */
-    @Pointcut("@annotation(com.xuyj.springboot.config.SysDbLog)")
+    SysLogEntityService logService;
+        @Pointcut("@annotation(com.xuyj.platform.aspect.SysLog)")
     public void logDbPointCut() {}
-
-//    @Around("logDbPointCut()")
-
-
     @Around(value= "logDbPointCut()")
     public Object around(ProceedingJoinPoint point) throws Throwable {
         long beginTime = System.currentTimeMillis();
@@ -70,7 +59,7 @@ public class LogDBAspect {
         sysLogEntity.setExeuTime(time);
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         sysLogEntity.setCreateDate(dateFormat.format(new Date()));
-        SysDbLog sysLog = method.getAnnotation(SysDbLog.class);
+        SysLog sysLog = method.getAnnotation(SysLog.class);
         if(sysLog != null) {
             //注解上的描述
             sysLogEntity.setRemark(sysLog.value());
@@ -91,6 +80,8 @@ public class LogDBAspect {
         } catch (Exception e){
 
         }
-        sysLogService.save(sysLogEntity);
+        logService.save(sysLogEntity);
     }
-}
+
+
+    }

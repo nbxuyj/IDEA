@@ -30,7 +30,7 @@ public class StudentService {
      * @param entity
      * @return
      */
-    @SysDbLog(value = "新增",method=OperEnum.新增 )
+    @SysDbLog(value = "新增" )
     public Student Insert(Student entity) {
         return studentRepository.save(entity);
     }
@@ -41,7 +41,7 @@ public class StudentService {
      * @param id
      * @return
      */
-    @SysDbLog(value = "删除",method=OperEnum.删除)
+    @SysDbLog(value = "删除")
     public Integer Delete(Integer id) {
         studentRepository.deleteById(id);
         return 1;

@@ -15,5 +15,5 @@ import java.lang.annotation.*;
 public @interface SysDbLog {
     //用于显示写日志的名称
     String value() default "";
-    OperEnum  method() default  OperEnum.查询;
+//    OperEnum  method() default  OperEnum.查询;
 }

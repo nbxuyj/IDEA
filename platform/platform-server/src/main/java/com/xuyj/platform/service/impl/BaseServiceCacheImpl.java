@@ -1,39 +1,48 @@
 package com.xuyj.platform.service.impl;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
-
+import com.xuyj.platform.aspect.SysLog;
+import com.xuyj.platform.db.entity.BaseEntity;
 import com.xuyj.platform.service.BaseServiceCache;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 
-import javax.annotation.Resource;
-import java.io.Serializable;
+import java.util.Collection;
 import java.util.List;
 
-public class BaseServiceCacheImpl<T, PK extends Serializable> implements BaseServiceCache<T, PK> {
-//   @Resource
-//    BaseDao<T, PK> baseDao;
-//
-//    public List<T> list() { return baseDao.list(); }
-//    @Override
-//    public T get(PK id) {
-//        return (T) baseDao.get(id);
-//    }
-//
-//    @Override
-//    public int add(T t) {
-//        return baseDao.add(t);
-//    }
-//
-//    @Override
-//    public int delete(PK id) {
-//        return baseDao.delete(id);
-//    }
-//
-//    @Override
-//    public int update(T t) {
-//        return baseDao.update(t);
-//    }
-//
-//
+@CacheConfig(cacheNames="baseCache") //抽取缓存的公共配置
+public class BaseServiceCacheImpl<T extends BaseEntity, M extends BaseMapper<T>> extends ServiceImpl<M, T>
+        implements BaseServiceCache<T> {
+    @Override
+    @Cacheable(keyGenerator = "myKeyGenerator")
+
+    public List<T> listByCache() {
+        return this.lambdaQuery().list();
+    }
+
+    @Override
+    @SysLog()
+    @CacheEvict(keyGenerator = "myKeyGenerator", beforeInvocation = true)
+    public boolean insertByCache(T dto) {
+        return this.save(dto);
+    }
+
+    @Override
+    @SysLog()
+    @CacheEvict(keyGenerator = "myKeyGenerator", beforeInvocation = true)
+    public boolean updateByCache(T dto) {
+        return this.updateById(dto);
+    }
+
+    @Override
+    @SysLog()
+    @CacheEvict(keyGenerator = "myKeyGenerator", beforeInvocation = true)
+    public boolean deleteByCache(Collection<?> list) {
+        return this.removeByIds(list);
+    }
 
 
 }
