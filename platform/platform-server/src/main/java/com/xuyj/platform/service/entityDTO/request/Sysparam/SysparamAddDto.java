@@ -18,6 +18,30 @@ import io.swagger.annotations.ApiModel;
 @ApiModel("SysparamAddDto")
 public class SysparamAddDto implements Serializable {
     //从DB对象中手动复制需要增加的实体字段
+    /**
+     * 单位ID
+     */
+
+
+    @ApiModelProperty("单位ID")
+    private String unitid;
+    /**
+     * 参数名称
+     */
+
+    @ApiModelProperty("参数名称")
+    private String paramname;
+    /**
+     * 参数值
+     */
+
+    @ApiModelProperty("参数值")
+    private String paramvalue;
+    /**
+     *
+     */
+    @ApiModelProperty("")
+    private Integer pramtype;
 
 }
 
