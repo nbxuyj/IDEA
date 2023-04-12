@@ -8,6 +8,7 @@ class SpringbootAopLogApplicationTests {
 
     @Test
     void contextLoads() {
+        System.out.println("hello");
     }
 
 }
