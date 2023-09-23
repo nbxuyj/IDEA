@@ -1,7 +1,13 @@
 package com.xuyj.demospring;
 
+import com.xuyj.demospring.designMode.abstractFactory.BaseCreateor;
+import com.xuyj.demospring.designMode.abstractFactory.CarSettingParamFactory;
+import com.xuyj.demospring.designMode.abstractFactory.ShipSettingFactory;
+import com.xuyj.demospring.designMode.abstractFactory.pojo.BaseSettingParam;
+import com.xuyj.demospring.designMode.factorymethod.XianRouJiaMoStore;
 import com.xuyj.demospring.designMode.simplefatory.RoujiaMoStore;
 import com.xuyj.demospring.designMode.simplefatory.SimpleRouJiaMoFactroy;
+import com.xuyj.demospring.designMode.simplefatory.pojo.RouJiaMo;
 import com.xuyj.demospring.entity.Man;
 import com.xuyj.demospring.entity.User;
 import lombok.var;
@@ -34,12 +40,30 @@ class DemospringApplicationTests {
     void test建造者模式(){
         User user = new User.UserBuilder().password("sss").username("ssss").build();
     }
+
+
     @Test
     void test简单工厂模式(){
         //https://blog.csdn.net/lmj623565791/article/details/24460585
         var store= new  RoujiaMoStore(new SimpleRouJiaMoFactroy());
         store.sellRouJiaMoV2("La");
+    }
+    @Test
+    void test工厂方法模式(){
+        
+        //https://blog.csdn.net/lmj623565791/article/details/24460585
+        var store= new XianRouJiaMoStore();
+        store.createRouJiaMo("Tian");
+        store.sellRouJiaMoV2();
 
+    }
+    @Test
+    void test抽象工厂模式(){
+        //创建二个工厂，输出参数
+        BaseCreateor shipFactory = new ShipSettingFactory();
+        BaseCreateor carFactory = new CarSettingParamFactory();
+        System.out.println(shipFactory.CreateSettinParamFactory().toString());
+        System.out.println(carFactory.CreateSettinParamFactory().toString());
     }
 }
 

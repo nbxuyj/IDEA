@@ -5,6 +5,7 @@ public abstract class RouJiaMo
 {
     protected String name;
 
+
     /**
      * 准备工作
      */
