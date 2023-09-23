@@ -24,6 +24,7 @@ import com.xuyj.demospring.designMode.decorator.Monkey;
 import com.xuyj.demospring.designMode.decorator.TheGreatestSage;
 import com.xuyj.demospring.designMode.decorator._具体装饰.Bird;
 import com.xuyj.demospring.designMode.decorator._具体装饰.Fish;
+import com.xuyj.demospring.designMode.facade.ECommerceFacade;
 import com.xuyj.demospring.designMode.factorymethod.XianRouJiaMoStore;
 import com.xuyj.demospring.designMode.prototype.Sheep;
 import com.xuyj.demospring.designMode.simplefatory.RoujiaMoStore;
@@ -180,18 +181,20 @@ class DemospringApplicationTests {
     void test适配器模式(){
         Player forwards = new Forwards("巴蒂尔");
         forwards.attack();
-
         Player center = new Center("科比");
         center.attack();
-
         Player guards = new Guards("詹姆斯");
         guards.attack();
-
         // 翻译者
         Translator translator = new Translator("姚明");
-
         translator.attack();
         translator.defense();
     }
+    @Test
+    void test外观模式(){
+        ECommerceFacade facade = new ECommerceFacade();
+        facade.placeOrder("P123", "Credit Card", "123 Main St");
+    }
+
 }
 
