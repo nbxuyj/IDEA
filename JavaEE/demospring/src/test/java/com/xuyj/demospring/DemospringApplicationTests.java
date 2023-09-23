@@ -1,5 +1,6 @@
 package com.xuyj.demospring;
 
+import com.alibaba.fastjson.JSONObject;
 import com.xuyj.demospring.designMode.abstractFactory.BaseCreateor;
 import com.xuyj.demospring.designMode.abstractFactory.CarSettingParamFactory;
 import com.xuyj.demospring.designMode.abstractFactory.ShipSettingFactory;
@@ -8,12 +9,14 @@ import com.xuyj.demospring.designMode.builder.ConcreteBuilder;
 import com.xuyj.demospring.designMode.builder.Director;
 import com.xuyj.demospring.designMode.builder.pojo.Product;
 import com.xuyj.demospring.designMode.factorymethod.XianRouJiaMoStore;
+import com.xuyj.demospring.designMode.prototype.Sheep;
 import com.xuyj.demospring.designMode.simplefatory.RoujiaMoStore;
 import com.xuyj.demospring.designMode.simplefatory.SimpleRouJiaMoFactroy;
 import com.xuyj.demospring.designMode.simplefatory.pojo.RouJiaMo;
 import com.xuyj.demospring.entity.Man;
 import com.xuyj.demospring.entity.User;
 import lombok.var;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -73,6 +76,26 @@ class DemospringApplicationTests {
         Director director = new Director();
         Product create = director.create(new ConcreteBuilder());
         System.out.println(create.toString());
+    }
+    @Test
+    void  test原型() throws CloneNotSupportedException {
+
+        System.out.println("原型模式完成对象的创建");
+
+        Sheep sheep1 = new Sheep("tom", 1, "白色");
+
+        //克隆
+        Sheep sheep2 = (Sheep)sheep1.clone();
+        Sheep sheep3 = (Sheep)sheep1.clone();
+        Sheep sheep4 = (Sheep)sheep1.clone();
+        Sheep sheep5 = (Sheep)sheep1.clone();
+
+        System.out.println("sheep1=" + JSONObject.toJSONString(sheep1));
+        System.out.println("sheep2=" + JSONObject.toJSONString(sheep2));
+        System.out.println("sheep3=" + JSONObject.toJSONString(sheep3));
+        System.out.println("sheep4=" + JSONObject.toJSONString(sheep4));
+        System.out.println("sheep5=" + JSONObject.toJSONString(sheep5));
+
     }
 }
 
