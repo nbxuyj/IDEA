@@ -15,6 +15,10 @@ import com.xuyj.demospring.designMode.bridge.Shirt;
 import com.xuyj.demospring.designMode.builder.ConcreteBuilder;
 import com.xuyj.demospring.designMode.builder.Director;
 import com.xuyj.demospring.designMode.builder.pojo.Product;
+import com.xuyj.demospring.designMode.decorator.Monkey;
+import com.xuyj.demospring.designMode.decorator.TheGreatestSage;
+import com.xuyj.demospring.designMode.decorator._具体装饰.Bird;
+import com.xuyj.demospring.designMode.decorator._具体装饰.Fish;
 import com.xuyj.demospring.designMode.factorymethod.XianRouJiaMoStore;
 import com.xuyj.demospring.designMode.prototype.Sheep;
 import com.xuyj.demospring.designMode.simplefatory.RoujiaMoStore;
@@ -143,13 +147,29 @@ class DemospringApplicationTests {
         Company nanjingCom = new ConcreteCompany("南京办事处");
         nanjingCom.add(new FinanceDepartment("南京办事处财务部"));
         nanjingCom.add(new HRDepartment("南京办事处人力资源部"));
+
+        Company nbCom=new ConcreteCompany("宁波分公司");
+        nbCom.add(new HRDepartment("宁波人力资源部"));
+        nbCom.add(new HRDepartment("宁波财务部"));
+
+        huadongCom.add(nbCom);
         huadongCom.add(hangzhouCom);
         huadongCom.add(nanjingCom);
         root.add(shandongCom);
         root.add(huadongCom);
         root.display(0);
+    }
+    @Test
+    void test装饰模式(){
 
+            TheGreatestSage sage = new Monkey();
+            //第一种写法
+//            TheGreatestSage bird = new Bird(sage);
+//            bird.move();
 
+            // 第二种写法
+            TheGreatestSage fish = new Fish(new Bird(sage));
+            fish.move();
 
     }
 }
