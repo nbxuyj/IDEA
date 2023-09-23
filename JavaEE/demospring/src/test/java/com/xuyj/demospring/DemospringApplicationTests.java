@@ -4,6 +4,9 @@ import com.xuyj.demospring.designMode.abstractFactory.BaseCreateor;
 import com.xuyj.demospring.designMode.abstractFactory.CarSettingParamFactory;
 import com.xuyj.demospring.designMode.abstractFactory.ShipSettingFactory;
 import com.xuyj.demospring.designMode.abstractFactory.pojo.BaseSettingParam;
+import com.xuyj.demospring.designMode.builder.ConcreteBuilder;
+import com.xuyj.demospring.designMode.builder.Director;
+import com.xuyj.demospring.designMode.builder.pojo.Product;
 import com.xuyj.demospring.designMode.factorymethod.XianRouJiaMoStore;
 import com.xuyj.demospring.designMode.simplefatory.RoujiaMoStore;
 import com.xuyj.demospring.designMode.simplefatory.SimpleRouJiaMoFactroy;
@@ -50,7 +53,7 @@ class DemospringApplicationTests {
     }
     @Test
     void test工厂方法模式(){
-        
+
         //https://blog.csdn.net/lmj623565791/article/details/24460585
         var store= new XianRouJiaMoStore();
         store.createRouJiaMo("Tian");
@@ -64,6 +67,12 @@ class DemospringApplicationTests {
         BaseCreateor carFactory = new CarSettingParamFactory();
         System.out.println(shipFactory.CreateSettinParamFactory().toString());
         System.out.println(carFactory.CreateSettinParamFactory().toString());
+    }
+    @Test
+    void test建造者()    {
+        Director director = new Director();
+        Product create = director.create(new ConcreteBuilder());
+        System.out.println(create.toString());
     }
 }
 
