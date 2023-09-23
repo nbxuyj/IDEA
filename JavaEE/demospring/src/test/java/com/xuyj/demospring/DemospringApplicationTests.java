@@ -9,6 +9,11 @@ import com.xuyj.demospring.designMode.abstractFactory.BaseCreateor;
 import com.xuyj.demospring.designMode.abstractFactory.CarSettingParamFactory;
 import com.xuyj.demospring.designMode.abstractFactory.ShipSettingFactory;
 import com.xuyj.demospring.designMode.abstractFactory.pojo.BaseSettingParam;
+import com.xuyj.demospring.designMode.adapter._球员.Player;
+import com.xuyj.demospring.designMode.adapter._球员.Translator;
+import com.xuyj.demospring.designMode.adapter._球员.imp.Center;
+import com.xuyj.demospring.designMode.adapter._球员.imp.Forwards;
+import com.xuyj.demospring.designMode.adapter._球员.imp.Guards;
 import com.xuyj.demospring.designMode.bridge.ClothingCorp;
 import com.xuyj.demospring.designMode.bridge.Jacket;
 import com.xuyj.demospring.designMode.bridge.Shirt;
@@ -170,7 +175,23 @@ class DemospringApplicationTests {
             // 第二种写法
             TheGreatestSage fish = new Fish(new Bird(sage));
             fish.move();
+    }
+    @Test
+    void test适配器模式(){
+        Player forwards = new Forwards("巴蒂尔");
+        forwards.attack();
 
+        Player center = new Center("科比");
+        center.attack();
+
+        Player guards = new Guards("詹姆斯");
+        guards.attack();
+
+        // 翻译者
+        Translator translator = new Translator("姚明");
+
+        translator.attack();
+        translator.defense();
     }
 }
 
