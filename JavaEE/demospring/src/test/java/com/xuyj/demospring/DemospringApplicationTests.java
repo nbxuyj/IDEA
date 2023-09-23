@@ -5,6 +5,9 @@ import com.xuyj.demospring.designMode.abstractFactory.BaseCreateor;
 import com.xuyj.demospring.designMode.abstractFactory.CarSettingParamFactory;
 import com.xuyj.demospring.designMode.abstractFactory.ShipSettingFactory;
 import com.xuyj.demospring.designMode.abstractFactory.pojo.BaseSettingParam;
+import com.xuyj.demospring.designMode.bridge.ClothingCorp;
+import com.xuyj.demospring.designMode.bridge.Jacket;
+import com.xuyj.demospring.designMode.bridge.Shirt;
 import com.xuyj.demospring.designMode.builder.ConcreteBuilder;
 import com.xuyj.demospring.designMode.builder.Director;
 import com.xuyj.demospring.designMode.builder.pojo.Product;
@@ -95,6 +98,18 @@ class DemospringApplicationTests {
         System.out.println("sheep3=" + JSONObject.toJSONString(sheep3));
         System.out.println("sheep4=" + JSONObject.toJSONString(sheep4));
         System.out.println("sheep5=" + JSONObject.toJSONString(sheep5));
+
+    }
+    @Test
+    void testBridge(){
+
+        System.out.println("---外套这样挣钱---");
+        ClothingCorp shirt = new ClothingCorp(new Shirt());
+        shirt.makeMoney();
+
+        System.out.println("---内衣这样挣钱---");
+        ClothingCorp jacket = new ClothingCorp(new Jacket());
+        jacket.makeMoney();
 
     }
 }
