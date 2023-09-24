@@ -8,7 +8,6 @@ import com.xuyj.demospring.designMode.Composite.HRDepartment;
 import com.xuyj.demospring.designMode.abstractFactory.BaseCreateor;
 import com.xuyj.demospring.designMode.abstractFactory.CarSettingParamFactory;
 import com.xuyj.demospring.designMode.abstractFactory.ShipSettingFactory;
-import com.xuyj.demospring.designMode.abstractFactory.pojo.BaseSettingParam;
 import com.xuyj.demospring.designMode.adapter._球员.Player;
 import com.xuyj.demospring.designMode.adapter._球员.Translator;
 import com.xuyj.demospring.designMode.adapter._球员.imp.Center;
@@ -26,10 +25,18 @@ import com.xuyj.demospring.designMode.decorator._具体装饰.Bird;
 import com.xuyj.demospring.designMode.decorator._具体装饰.Fish;
 import com.xuyj.demospring.designMode.facade.ECommerceFacade;
 import com.xuyj.demospring.designMode.factorymethod.XianRouJiaMoStore;
+import com.xuyj.demospring.designMode.flyweight.CharacterFactory;
+import com.xuyj.demospring.designMode.flyweight.ICharacter;
+import com.xuyj.demospring.designMode.flyweight.pojo.CharacterStyle;
 import com.xuyj.demospring.designMode.prototype.Sheep;
+import com.xuyj.demospring.designMode.proxy.Movie;
+import com.xuyj.demospring.designMode.proxy.MovieStaticProxy;
+import com.xuyj.demospring.designMode.proxy.impl.CaptainAmericaMovie;
+import com.xuyj.demospring.designMode.proxydynamix.MyInvocationHandler;
+import com.xuyj.demospring.designMode.proxydynamix.VIPMovie;
+import com.xuyj.demospring.designMode.proxydynamix.impl.IronManVIPMovie;
 import com.xuyj.demospring.designMode.simplefatory.RoujiaMoStore;
 import com.xuyj.demospring.designMode.simplefatory.SimpleRouJiaMoFactroy;
-import com.xuyj.demospring.designMode.simplefatory.pojo.RouJiaMo;
 import com.xuyj.demospring.entity.Man;
 import com.xuyj.demospring.entity.User;
 import lombok.var;
@@ -37,7 +44,8 @@ import lombok.var;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.lang.model.element.Name;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Proxy;
 
 /**
  * https://blog.csdn.net/lmj623565791/article/details/24460585
@@ -195,6 +203,45 @@ class DemospringApplicationTests {
         ECommerceFacade facade = new ECommerceFacade();
         facade.placeOrder("P123", "Credit Card", "123 Main St");
     }
+    @Test
+    void test享元模式(){
+        CharacterFactory characterFactory = new CharacterFactory();
 
+        CharacterStyle style1 = new CharacterStyle("Arial", 12, "Black");
+        CharacterStyle style2 = new CharacterStyle("Arial", 12, "Red");
+
+        ICharacter a1 = characterFactory.getCharacter('A');
+        a1.display(style1);
+
+        ICharacter a2 = characterFactory.getCharacter('A');
+        a2.display(style2);
+
+        ICharacter b1 = characterFactory.getCharacter('B');
+        b1.display(style1);
+    }
+    @Test
+    void test静态代理模式(){
+
+        Movie captainAmericaMovie = new CaptainAmericaMovie();
+        Movie movieStaticProxy = new MovieStaticProxy(captainAmericaMovie);
+        movieStaticProxy.play();
+    }
+    @Test
+    void test动态代理(){
+
+        // VIP 影厅《钢铁侠》
+        IronManVIPMovie ironManVIPMovie = new IronManVIPMovie();
+        InvocationHandler invocationHandler = new MyInvocationHandler(ironManVIPMovie);
+        VIPMovie dynamicProxy = (VIPMovie) Proxy.newProxyInstance(IronManVIPMovie.class.getClassLoader(),
+                IronManVIPMovie.class.getInterfaces(), invocationHandler);
+        dynamicProxy.vipPlay();
+
+        // 普通影厅《美国队长》
+        CaptainAmericaMovie captainAmericaMovie = new CaptainAmericaMovie();
+        InvocationHandler invocationHandler1 = new MyInvocationHandler(captainAmericaMovie);
+        Movie dynamicProxy1 = (Movie) Proxy.newProxyInstance(CaptainAmericaMovie.class.getClassLoader(),
+                CaptainAmericaMovie.class.getInterfaces(), invocationHandler1);
+        dynamicProxy1.play();
+    }
 }
 
