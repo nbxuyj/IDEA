@@ -31,6 +31,10 @@ import com.xuyj.demospring.designMode.factorymethod.XianRouJiaMoStore;
 import com.xuyj.demospring.designMode.flyweight.CharacterFactory;
 import com.xuyj.demospring.designMode.flyweight.ICharacter;
 import com.xuyj.demospring.designMode.flyweight.pojo.CharacterStyle;
+import com.xuyj.demospring.designMode.interpreterV2.AdvanceExpression;
+import com.xuyj.demospring.designMode.interpreterV2.Context;
+import com.xuyj.demospring.designMode.interpreterV2.Expression;
+import com.xuyj.demospring.designMode.interpreterV2.SimpleExpression;
 import com.xuyj.demospring.designMode.prototype.Sheep;
 import com.xuyj.demospring.designMode.proxy.Movie;
 import com.xuyj.demospring.designMode.proxy.MovieStaticProxy;
@@ -282,5 +286,15 @@ class DemospringApplicationTests {
         }
 
 
+    }
+    @Test
+    void test解析器(){
+        Context ctx = new Context();
+        ctx.add(new SimpleExpression());
+        ctx.add(new AdvanceExpression());
+        ctx.add(new SimpleExpression());
+        for (Expression eps : ctx.getList()) {
+            eps.interpret(ctx);
+        }
     }
 }
