@@ -19,6 +19,9 @@ import com.xuyj.demospring.designMode.bridge.Shirt;
 import com.xuyj.demospring.designMode.builder.ConcreteBuilder;
 import com.xuyj.demospring.designMode.builder.Director;
 import com.xuyj.demospring.designMode.builder.pojo.Product;
+import com.xuyj.demospring.designMode.chain.LengthCheckProcessor;
+import com.xuyj.demospring.designMode.chain.ProcessorChain;
+import com.xuyj.demospring.designMode.chain.WidthCheckProcessor;
 import com.xuyj.demospring.designMode.decorator.Monkey;
 import com.xuyj.demospring.designMode.decorator.TheGreatestSage;
 import com.xuyj.demospring.designMode.decorator._具体装饰.Bird;
@@ -67,53 +70,58 @@ class DemospringApplicationTests {
         System.out.println(Integer.valueOf(129) == Integer.valueOf(129));
         //原文链接：https://blog.csdn.net/qq_37291761/article/details/84546455
     }
+
     @Test
-    void test建造者模式(){
+    void test建造者模式() {
         User user = new User.UserBuilder().password("sss").username("ssss").build();
     }
 
 
     @Test
-    void test简单工厂模式(){
+    void test简单工厂模式() {
         //https://blog.csdn.net/lmj623565791/article/details/24460585
-        var store= new  RoujiaMoStore(new SimpleRouJiaMoFactroy());
+        var store = new RoujiaMoStore(new SimpleRouJiaMoFactroy());
         store.sellRouJiaMoV2("La");
     }
+
     @Test
-    void test工厂方法模式(){
+    void test工厂方法模式() {
 
         //https://blog.csdn.net/lmj623565791/article/details/24460585
-        var store= new XianRouJiaMoStore();
+        var store = new XianRouJiaMoStore();
         store.createRouJiaMo("Tian");
         store.sellRouJiaMoV2();
 
     }
+
     @Test
-    void test抽象工厂模式(){
+    void test抽象工厂模式() {
         //创建二个工厂，输出参数
         BaseCreateor shipFactory = new ShipSettingFactory();
         BaseCreateor carFactory = new CarSettingParamFactory();
         System.out.println(shipFactory.CreateSettinParamFactory().toString());
         System.out.println(carFactory.CreateSettinParamFactory().toString());
     }
+
     @Test
-    void test建造者()    {
+    void test建造者() {
         Director director = new Director();
         Product create = director.create(new ConcreteBuilder());
         System.out.println(create.toString());
     }
+
     @Test
-    void  test原型() throws CloneNotSupportedException {
+    void test原型() throws CloneNotSupportedException {
 
         System.out.println("原型模式完成对象的创建");
 
         Sheep sheep1 = new Sheep("tom", 1, "白色");
 
         //克隆
-        Sheep sheep2 = (Sheep)sheep1.clone();
-        Sheep sheep3 = (Sheep)sheep1.clone();
-        Sheep sheep4 = (Sheep)sheep1.clone();
-        Sheep sheep5 = (Sheep)sheep1.clone();
+        Sheep sheep2 = (Sheep) sheep1.clone();
+        Sheep sheep3 = (Sheep) sheep1.clone();
+        Sheep sheep4 = (Sheep) sheep1.clone();
+        Sheep sheep5 = (Sheep) sheep1.clone();
 
         System.out.println("sheep1=" + JSONObject.toJSONString(sheep1));
         System.out.println("sheep2=" + JSONObject.toJSONString(sheep2));
@@ -122,8 +130,9 @@ class DemospringApplicationTests {
         System.out.println("sheep5=" + JSONObject.toJSONString(sheep5));
 
     }
+
     @Test
-    void testBridge(){
+    void testBridge() {
         System.out.println("---桥接模式---");
         System.out.println("---外套这样挣钱---");
         ClothingCorp shirt = new ClothingCorp(new Shirt());
@@ -134,8 +143,9 @@ class DemospringApplicationTests {
         jacket.makeMoney();
 
     }
+
     @Test
-    void test组合模式(){
+    void test组合模式() {
         Company root = new ConcreteCompany();
         root.setName("北京总公司");
         root.add(new HRDepartment("总公司人力资源部"));
@@ -162,7 +172,7 @@ class DemospringApplicationTests {
         nanjingCom.add(new FinanceDepartment("南京办事处财务部"));
         nanjingCom.add(new HRDepartment("南京办事处人力资源部"));
 
-        Company nbCom=new ConcreteCompany("宁波分公司");
+        Company nbCom = new ConcreteCompany("宁波分公司");
         nbCom.add(new HRDepartment("宁波人力资源部"));
         nbCom.add(new HRDepartment("宁波财务部"));
 
@@ -173,20 +183,22 @@ class DemospringApplicationTests {
         root.add(huadongCom);
         root.display(0);
     }
-    @Test
-    void test装饰模式(){
 
-            TheGreatestSage sage = new Monkey();
-            //第一种写法
+    @Test
+    void test装饰模式() {
+
+        TheGreatestSage sage = new Monkey();
+        //第一种写法
 //            TheGreatestSage bird = new Bird(sage);
 //            bird.move();
 
-            // 第二种写法
-            TheGreatestSage fish = new Fish(new Bird(sage));
-            fish.move();
+        // 第二种写法
+        TheGreatestSage fish = new Fish(new Bird(sage));
+        fish.move();
     }
+
     @Test
-    void test适配器模式(){
+    void test适配器模式() {
         Player forwards = new Forwards("巴蒂尔");
         forwards.attack();
         Player center = new Center("科比");
@@ -198,13 +210,15 @@ class DemospringApplicationTests {
         translator.attack();
         translator.defense();
     }
+
     @Test
-    void test外观模式(){
+    void test外观模式() {
         ECommerceFacade facade = new ECommerceFacade();
         facade.placeOrder("P123", "Credit Card", "123 Main St");
     }
+
     @Test
-    void test享元模式(){
+    void test享元模式() {
         CharacterFactory characterFactory = new CharacterFactory();
 
         CharacterStyle style1 = new CharacterStyle("Arial", 12, "Black");
@@ -219,15 +233,17 @@ class DemospringApplicationTests {
         ICharacter b1 = characterFactory.getCharacter('B');
         b1.display(style1);
     }
+
     @Test
-    void test静态代理模式(){
+    void test静态代理模式() {
 
         Movie captainAmericaMovie = new CaptainAmericaMovie();
         Movie movieStaticProxy = new MovieStaticProxy(captainAmericaMovie);
         movieStaticProxy.play();
     }
+
     @Test
-    void test动态代理(){
+    void test动态代理() {
 
         // VIP 影厅《钢铁侠》
         IronManVIPMovie ironManVIPMovie = new IronManVIPMovie();
@@ -236,6 +252,7 @@ class DemospringApplicationTests {
                 IronManVIPMovie.class.getInterfaces(), invocationHandler);
         dynamicProxy.vipPlay();
 
+
         // 普通影厅《美国队长》
         CaptainAmericaMovie captainAmericaMovie = new CaptainAmericaMovie();
         InvocationHandler invocationHandler1 = new MyInvocationHandler(captainAmericaMovie);
@@ -243,5 +260,27 @@ class DemospringApplicationTests {
                 CaptainAmericaMovie.class.getInterfaces(), invocationHandler1);
         dynamicProxy1.play();
     }
-}
 
+    @Test
+    void test责任链() {
+        int[][] arrays = {{60, 60}, {40, 40}, {40, 60}, {60, 40}};
+        for (int[] array : arrays) {
+            ProcessorChain processorChain = new ProcessorChain();
+            processorChain.addProcessor(new LengthCheckProcessor());
+            processorChain.addProcessor(new WidthCheckProcessor());
+
+            com.xuyj.demospring.designMode.chain.pojo.Product product = new com.xuyj.demospring.designMode.chain.pojo.Product(array[0], array[1]);
+            boolean checkResult = processorChain.process(product, processorChain);
+            if (checkResult) {
+                System.out.println("产品最终检验合格");
+            } else {
+                System.out.println("产品最终检验不合格");
+            }
+            System.out.println();
+
+
+        }
+
+
+    }
+}
