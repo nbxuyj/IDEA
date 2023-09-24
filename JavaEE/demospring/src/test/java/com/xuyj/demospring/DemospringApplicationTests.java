@@ -5,6 +5,10 @@ import com.xuyj.demospring.designMode.Composite.Company;
 import com.xuyj.demospring.designMode.Composite.ConcreteCompany;
 import com.xuyj.demospring.designMode.Composite.FinanceDepartment;
 import com.xuyj.demospring.designMode.Composite.HRDepartment;
+import com.xuyj.demospring.designMode.Iterator.StudentAggregate;
+import com.xuyj.demospring.designMode.Iterator.StudentIterator;
+import com.xuyj.demospring.designMode.Iterator.impl.StudentAggregateImpl;
+import com.xuyj.demospring.designMode.Iterator.pojo.Student;
 import com.xuyj.demospring.designMode.abstractFactory.BaseCreateor;
 import com.xuyj.demospring.designMode.abstractFactory.CarSettingParamFactory;
 import com.xuyj.demospring.designMode.abstractFactory.ShipSettingFactory;
@@ -22,6 +26,9 @@ import com.xuyj.demospring.designMode.builder.pojo.Product;
 import com.xuyj.demospring.designMode.chain.LengthCheckProcessor;
 import com.xuyj.demospring.designMode.chain.ProcessorChain;
 import com.xuyj.demospring.designMode.chain.WidthCheckProcessor;
+import com.xuyj.demospring.designMode.command.Command;
+import com.xuyj.demospring.designMode.command.ConcreteCommand;
+import com.xuyj.demospring.designMode.command.Invoker;
 import com.xuyj.demospring.designMode.decorator.Monkey;
 import com.xuyj.demospring.designMode.decorator.TheGreatestSage;
 import com.xuyj.demospring.designMode.decorator._具体装饰.Bird;
@@ -44,6 +51,9 @@ import com.xuyj.demospring.designMode.proxydynamix.VIPMovie;
 import com.xuyj.demospring.designMode.proxydynamix.impl.IronManVIPMovie;
 import com.xuyj.demospring.designMode.simplefatory.RoujiaMoStore;
 import com.xuyj.demospring.designMode.simplefatory.SimpleRouJiaMoFactroy;
+import com.xuyj.demospring.designMode.tmpplate.AbstractClass;
+import com.xuyj.demospring.designMode.tmpplate.ConcreteClass1;
+import com.xuyj.demospring.designMode.tmpplate.ConcreteClass2;
 import com.xuyj.demospring.entity.Man;
 import com.xuyj.demospring.entity.User;
 import lombok.var;
@@ -51,6 +61,7 @@ import lombok.var;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import javax.sound.midi.Receiver;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
 
@@ -296,5 +307,56 @@ class DemospringApplicationTests {
         for (Expression eps : ctx.getList()) {
             eps.interpret(ctx);
         }
+    }
+    @Test
+    void test模板(){
+        AbstractClass abstractClass1 = new ConcreteClass1();
+        AbstractClass abstractClass2 = new ConcreteClass2();
+        applyTemplate(abstractClass1);
+        applyTemplate(abstractClass2);
+    }
+    public static void applyTemplate(AbstractClass abstractClass){
+        abstractClass.templateMethod();
+    }
+    @Test
+    void test命令模式(){
+        com.xuyj.demospring.designMode.command.Receiver r = new com.xuyj.demospring.designMode.command.Receiver();
+        Command c = new ConcreteCommand(r);
+        Invoker i = new Invoker();
+        i.SetCommand(c);
+        i.ExecuteCommand();
+    }
+    @Test
+    void test迭代器(){
+        // 创建 3 个学生对象
+        Student tom = new Student("Tom");
+        Student jerry = new Student("Jerry");
+        Student trump = new Student("Trump");
+
+        // 构造学生对象集合
+        StudentAggregate studentAggregate = new StudentAggregateImpl();
+        studentAggregate.addStudent(tom);
+        studentAggregate.addStudent(jerry);
+        studentAggregate.addStudent(trump);
+
+        // 获取学生对象的迭代器
+        StudentIterator studentIterator = studentAggregate.getStudentIterator();
+        // 判断是否是最后一个对象 , 如果不是 , 获取下一个对象 , 并打印
+        while (!studentIterator.isLast()) {
+            Student student = studentIterator.nextStudent();
+            System.out.println(student);
+        }
+
+        // 删除一个对象
+        studentAggregate.removeStudent(trump);
+        System.out.println("删除 Trump" );
+
+        studentIterator = studentAggregate.getStudentIterator();
+        // 判断是否是最后一个对象 , 如果不是 , 获取下一个对象 , 并打印
+        while (!studentIterator.isLast()) {
+            Student student = studentIterator.nextStudent();
+            System.out.println(student);
+        }
+
     }
 }
