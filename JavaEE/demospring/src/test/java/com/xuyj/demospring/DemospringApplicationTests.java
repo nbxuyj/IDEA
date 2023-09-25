@@ -42,6 +42,12 @@ import com.xuyj.demospring.designMode.interpreterV2.AdvanceExpression;
 import com.xuyj.demospring.designMode.interpreterV2.Context;
 import com.xuyj.demospring.designMode.interpreterV2.Expression;
 import com.xuyj.demospring.designMode.interpreterV2.SimpleExpression;
+import com.xuyj.demospring.designMode.mediator.*;
+import com.xuyj.demospring.designMode.memento.ArticleCaretaker;
+import com.xuyj.demospring.designMode.memento.ArticleMemento;
+import com.xuyj.demospring.designMode.memento.ArticleText;
+import com.xuyj.demospring.designMode.observer.impl.Boss;
+import com.xuyj.demospring.designMode.observer.impl.Employee;
 import com.xuyj.demospring.designMode.prototype.Sheep;
 import com.xuyj.demospring.designMode.proxy.Movie;
 import com.xuyj.demospring.designMode.proxy.MovieStaticProxy;
@@ -51,6 +57,13 @@ import com.xuyj.demospring.designMode.proxydynamix.VIPMovie;
 import com.xuyj.demospring.designMode.proxydynamix.impl.IronManVIPMovie;
 import com.xuyj.demospring.designMode.simplefatory.RoujiaMoStore;
 import com.xuyj.demospring.designMode.simplefatory.SimpleRouJiaMoFactroy;
+import com.xuyj.demospring.designMode.state.JdLogistics;
+import com.xuyj.demospring.designMode.state.OrderState;
+import com.xuyj.demospring.designMode.state.ProductOutState;
+import com.xuyj.demospring.designMode.state.TransportState;
+import com.xuyj.demospring.designMode.strategy.AlipayPaymentStrategy;
+import com.xuyj.demospring.designMode.strategy.PaymentService;
+import com.xuyj.demospring.designMode.strategy.WechatPaymentStrategy;
 import com.xuyj.demospring.designMode.tmpplate.AbstractClass;
 import com.xuyj.demospring.designMode.tmpplate.ConcreteClass1;
 import com.xuyj.demospring.designMode.tmpplate.ConcreteClass2;
@@ -64,6 +77,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import javax.sound.midi.Receiver;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
+import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * https://blog.csdn.net/lmj623565791/article/details/24460585
@@ -357,6 +372,73 @@ class DemospringApplicationTests {
             Student student = studentIterator.nextStudent();
             System.out.println(student);
         }
+
+    }
+    @Test
+    void test中介者模式(){
+        Mediator md = new ConcreteMediator();
+        Colleague c1, c2;
+        c1 = new ConcreteColleague1();
+        c2 = new ConcreteColleague2();
+        md.register(c1);
+        md.register(c2);
+        c1.send();
+        System.out.println("-------------");
+        c2.send();
+    }
+    @Test
+    void test备忘录(){
+
+        ArticleCaretaker articleCaretaker = new ArticleCaretaker();
+
+        ArticleText articleText = new ArticleText("标题1","内容1",new Date());
+        ArticleMemento articleMemento = articleText.saveToMemento();
+        articleCaretaker.setArticle(articleMemento);//备忘1次
+
+        articleText = new ArticleText("标题2","内容2",new Date());
+        System.out.println(String.format("修改后的标题为【%s】，内容为【%s】",articleText.getTitle(),articleText.getContent()));
+
+        articleText.getArticleFromMemento(articleCaretaker.getArticle(0));
+        System.out.println(String.format("还原后的标题为【%s】，内容为【%s】",articleText.getTitle(),articleText.getContent()));
+    }
+    @Test
+    void test观察者模式(){
+        Boss boss = new Boss("老板发布放假通知");
+        Employee emp = new Employee("张三");
+        Employee emp1 = new Employee("李四");
+        Employee emp2 = new Employee("王五");
+        boss.AddSubscriber(emp);
+        boss.AddSubscriber(emp1);
+        boss.AddSubscriber(emp2);
+        boss.Publish();
+    }
+    @Test
+    void test状态模式(){
+        //状态的保持与切换者
+        JdLogistics jdLogistics = new JdLogistics();
+
+        //接单状态
+        OrderState orderState = new OrderState();
+        jdLogistics.setLogisticsState(orderState);
+        jdLogistics.doAction();
+
+        //出库状态
+        ProductOutState productOutState = new ProductOutState();
+        jdLogistics.setLogisticsState(productOutState);
+        jdLogistics.doAction();
+
+        //运输状态
+        TransportState transportState = new TransportState();
+        jdLogistics.setLogisticsState(transportState);
+        jdLogistics.doAction();
+    }
+    @Test
+    void test策略模式(){
+        PaymentService paymentService = new PaymentService();
+        // 使用微信支付
+        paymentService.payment(new WechatPaymentStrategy(), new BigDecimal("100"));
+        //使用支付宝支付
+        paymentService.payment(new AlipayPaymentStrategy(), new BigDecimal("100"));
 
     }
 }
