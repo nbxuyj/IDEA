@@ -67,6 +67,9 @@ import com.xuyj.demospring.designMode.strategy.WechatPaymentStrategy;
 import com.xuyj.demospring.designMode.tmpplate.AbstractClass;
 import com.xuyj.demospring.designMode.tmpplate.ConcreteClass1;
 import com.xuyj.demospring.designMode.tmpplate.ConcreteClass2;
+import com.xuyj.demospring.designMode.visitor.BigHuYouCompany;
+import com.xuyj.demospring.designMode.visitor.LiveApp;
+import com.xuyj.demospring.designMode.visitor.SocialApp;
 import com.xuyj.demospring.entity.Man;
 import com.xuyj.demospring.entity.User;
 import lombok.var;
@@ -440,5 +443,15 @@ class DemospringApplicationTests {
         //使用支付宝支付
         paymentService.payment(new AlipayPaymentStrategy(), new BigDecimal("100"));
 
+    }
+    @Test
+
+    void test访问都模式(){
+        BigHuYouCompany bigHuYou= new BigHuYouCompany();
+        //可以很轻松的更换Visitor，但是要求BigHuYouCompany的结构稳定
+        System.out.println("-----------------启动社交APP项目--------------------");
+        bigHuYou.startProject(new SocialApp());
+        System.out.println("-----------------启动短视频APP项目--------------------");
+        bigHuYou.startProject(new LiveApp());
     }
 }
